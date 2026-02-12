@@ -46,7 +46,7 @@ function InfoCard({
 export default function AboutSection() {
   return (
     <section className="bg-white">
-      <div className="container py-12 lg:py-16">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-0 py-12 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-10 xl:gap-16">
           {/* Left column: About Us */}
           <div>
