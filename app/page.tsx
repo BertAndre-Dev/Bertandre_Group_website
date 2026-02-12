@@ -15,11 +15,15 @@ export default function Home() {
         <HeroSection />
         <HeroBanner />
         <AboutSection />
+      </main>
+      <main>
         <StatisticsSection />
         <SubsidiariesSection />
+      </main>
+      <main>
         <CallToActionSection />
       </main>
-           <Footer />
+      <Footer />
     </div>
   );
 }
