@@ -2,11 +2,11 @@ import React from "react";
 import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
 
 interface NavbarTopProps {
-  phone?: string | number;
-  email?: string;
-  address?: string;
-  instagramUrl?: string;
-  facebookUrl?: string;
+  phone: string;
+  email: string;
+  address: string;
+  instagramUrl: string;
+  facebookUrl: string;
 }
 
 export default function NavbarTop({
