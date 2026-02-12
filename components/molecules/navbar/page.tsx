@@ -35,7 +35,7 @@ export default function Navbar() {
       />
 
       {/* Main Navbar */}
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-0">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
@@ -49,14 +49,20 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-x-20">
+          <div className="hidden lg:flex items-center gap-x-16 xl:gap-x-20">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
 
               if (link.label === "Contact Us") {
                 return (
                   <Link key={link.href} href={link.href}>
-                    <Button className="bg-[#1560BD] hover:bg-[#124ea0] rounded-full text-white px-8 py-4">
+                    <Button
+                      bg="bg-[#1560BD]"
+                      hover="hover:bg-[#124ea0]"
+                      text="text-white"
+                      padding="px-8 py-4"
+                      rounded="rounded-full"
+                    >
                       Contact Us
                     </Button>
                   </Link>
@@ -85,7 +91,12 @@ export default function Navbar() {
             className="lg:hidden p-2 cursor-pointer"
             aria-label="Toggle menu"
           >
-            <Image src="/assets/Mobile hamburger.svg" alt="Menu" width={40} height={40} />
+            <Image
+              src="/assets/Mobile hamburger.svg"
+              alt="Menu"
+              width={40}
+              height={40}
+            />
           </button>
         </div>
       </div>
@@ -94,7 +105,6 @@ export default function Navbar() {
       {isMenuOpen && (
         // <div className="fixed inset-0 z-[999] bg-white md:hidden">
         <div className="fixed inset-0 z-999 bg-white lg:hidden">
-
           <div className="flex items-center justify-between px-6 py-5 border-b">
             <Link href="/" onClick={() => setIsMenuOpen(false)}>
               <Image
@@ -107,7 +117,13 @@ export default function Navbar() {
             </Link>
 
             <Button onClick={toggleMenu} className="p-2">
-              <Image src="/assets/Close.svg" alt="Close" width={40} height={40} className="" />
+              <Image
+                src="/assets/Close.svg"
+                alt="Close"
+                width={40}
+                height={40}
+                className=""
+              />
             </Button>
           </div>
 
