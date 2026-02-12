@@ -16,7 +16,7 @@ export default function Home() {
         <HeroBanner />
         <AboutSection />
       </main>
-      <main>
+      <main >
         <StatisticsSection />
         <SubsidiariesSection />
       </main>

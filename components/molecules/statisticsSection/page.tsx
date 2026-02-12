@@ -2,7 +2,6 @@
 
 import React, { ReactNode } from "react";
 import Image from "next/image";
-import { Handshake, Lightbulb } from "lucide-react";
 
 interface StatCardProps {
   readonly icon: ReactNode;
@@ -12,16 +11,16 @@ interface StatCardProps {
 
 function StatCard({ icon, value, label }: StatCardProps) {
   return (
-    <div className="flex items-center gap-4 p-6">
+    <div className="grid grid-cols-2">
       <div className="shrink-0 flex items-center justify-center text-[#184b9e]">
         {icon}
       </div>
 
       <div>
-        <p className="text-2xl sm:text-3xl font-medium text-[#000] leading-tight">
+        <p className="text-[36px] text-black font-bold leading-tight pb-2">
           {value}
         </p>
-        <p className="text-base text-[#000]">{label}</p>
+        <p className="text-base text-black">{label}</p>
       </div>
     </div>
   );
@@ -34,22 +33,31 @@ const STATS = [
     label: "Team Members",
   },
   {
-    icon: <Handshake className="w-12 h-12 text-[#184b9e]" strokeWidth={1.5} />,
+    icon: (
+      <Image
+        src="/assets/handshake.svg"
+        alt="handshake"
+        width={48}
+        height={48}
+      />
+    ),
     value: "20+",
     label: "Businesses",
   },
   {
-    icon: <Lightbulb className="w-12 h-12 text-[#184b9e]" strokeWidth={1.5} />,
-    value: "50+",
+    icon: (
+      <Image src="/assets/setting.svg" alt="setting" width={48} height={48} />
+    ),
+    value: "10+",
     label: "Innovative Solutions",
   },
 ];
 
 export default function StatisticsSection() {
   return (
-    <section className="bg-[#F7F7F7] py-12 lg:py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+    <section className="bg-[#F7F7F7]">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-0 py-12 md:py-20">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-12 md:gap-8">
           {STATS.map((stat) => (
             <StatCard
               key={stat.label}

@@ -127,7 +127,7 @@ export default function Navbar() {
             </Button>
           </div>
 
-          <div className="flex flex-col items-center justify-center h-[calc(80vh-210px)] gap-y-16">
+          <div className="flex flex-col items-center justify-center h-[calc(80vh-210px)] gap-y-12">
             {navLinks
               .filter((link) => link.label !== "Contact Us")
               .map((link) => (
@@ -144,9 +144,16 @@ export default function Navbar() {
               ))}
           </div>
 
-          <div className="px-12 pb-10">
+          <div className="flex justify-center">
             <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-              <Button className="w-full bg-[#1560BD] rounded-full py-2 text-white text-lg">
+              <Button 
+              // className="w-full bg-[#1560BD]  py-2 text-white text-lg rounded="rounded-full" "
+              bg="bg-[#1560BD]"
+              text="text-white"
+              rounded="rounded-full"
+              padding="px-12 py-4"
+              hover="hover:bg-[#124ea0]"
+              >
                 Contact Us
               </Button>
             </Link>

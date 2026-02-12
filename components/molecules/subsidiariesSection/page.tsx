@@ -88,8 +88,8 @@ const SUBSIDIARIES: SubsidiaryCardProps[] = [
 
 export default function SubsidiariesSection() {
   return (
-    <section className="bg-[#D0DFF2] py-12 lg:py-16">
-      <div className="container mx-auto px-4">
+    <section className="bg-[#D0DFF2]">
+      <div className="container mx-auto mx-auto px-6 md:px-8 lg:px-10 xl:px-0">
         <div className="flex justify-center mb-10 lg:mb-12">
           <Pill
             className="bg-white border border-[#1560BD] text-[#1560BD]"
