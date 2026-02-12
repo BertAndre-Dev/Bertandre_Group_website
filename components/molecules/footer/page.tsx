@@ -1,0 +1,168 @@
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+
+const QUICK_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Business", href: "/business" },
+  { label: "Contact Us", href: "/contact" },
+];
+
+const SERVICES = [{ label: "Businesses", href: "/business" }];
+
+const INFORMATION = [
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Cookie Policy", href: "/cookies" },
+  { label: "Terms & Conditions", href: "/terms" },
+  { label: "FAQ", href: "/faq" },
+];
+
+function FooterColumn({
+  heading,
+  links,
+}: {
+  readonly heading: string;
+  readonly links: readonly { label: string; href: string }[];
+}) {
+  return (
+    <div>
+      <h3 className="text-white font-bold text-[14px] md:text-base mb-4">
+        {heading}
+      </h3>
+      <ul className="flex flex-col gap-4">
+        {links.map(({ label, href }) => (
+          <li key={href}>
+            <Link
+              href={href}
+              className="text-[#F7F7F7] text-[14px] md:text-[18px] font-light md:font-normal hover:text-white transition-colors"
+            >
+              {label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function SocialIcons() {
+  return (
+    <div className="flex items-center gap-3 mt-2">
+      <a
+        href="https://instagram.com/bertandregroup"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:bg-white/20 transition-colors text-white"
+        aria-label="Instagram"
+      >
+        <Image
+          src="/assets/Instagram.svg"
+          className="w-5 h-5"
+          alt="Instagram"
+          width={20}
+          height={20}
+        />
+      </a>
+      <a
+        href="https://youtube.com/bertandregroup"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:bg-white/20 transition-colors text-white"
+        aria-label="YouTube"
+      >
+        <Image
+          src="/assets/YouTube.svg"
+          className="w-5 h-5"
+          alt="YouTube"
+          width={20}
+          height={20}
+        />
+      </a>
+      <a
+        href="https://facebook.com/bertandregroup"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:bg-white/20 transition-colors text-white"
+        aria-label="Facebook"
+      >
+        <Image
+          src="/assets/Facebook.svg"
+          className="w-5 h-5"
+          alt="Facebook"
+          width={20}
+          height={20}
+        />
+      </a>
+    </div>
+  );
+}
+
+export default function Footer() {
+  return (
+    <footer className="bg-[#1560BD]">
+      <div className="container mx-auto px-4 pt-12 pb-8 lg:pt-16 lg:pb-10">
+        <div>
+          {/* Brand */}
+          <div className="lg:col-span-2">
+            <Link href="/" className="inline-flex flex-col gap-1">
+              <div className="flex flex-col md:flex-row items-center md:gap-3">
+                <Image
+                  src="/assets/Logo2.svg"
+                  // className="w-full h-full"
+                  alt="Logo"
+                  width={150}
+                  height={150}
+                />
+
+                <div>
+                  <span className="text-white text-base md:text-[22px] lg:text-[32px] pt-2 md:pt-0 font-light block">
+                    BertAndre Group
+                  </span>
+                  <p className="text-white text-sm md:text-[18px] font-light hidden sm:block">
+                    Purpose-driven ventures. Built to scale.
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-1 pt-6">
+            <FooterColumn heading="Quick Links" links={QUICK_LINKS} />
+            <FooterColumn heading="Services" links={SERVICES} />
+            <FooterColumn heading="Information" links={INFORMATION} />
+
+            {/* Social + contact */}
+            <div>
+              <h3 className="text-white font-semibold text-sm sm:text-base mb-4">
+                Social
+              </h3>
+              <a
+                href="mailto:support@bertandre.com"
+                className="text-white/90 text-sm hover:text-white transition-colors block mb-1"
+              >
+                support@bertandre.com
+              </a>
+              <a
+                href="tel:+2343722742444"
+                className="text-white/90 text-sm hover:text-white transition-colors block mb-3"
+              >
+                +234 372 274 2444
+              </a>
+              <SocialIcons />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Copyright bar */}
+      <div className="flex justify-center px-4 pt-6">
+        <p className="bg-[#E5E5E5] text-[#4C4C4C] text-[14px] md:text-[18px] font-normal py-3 px-6 rounded-tl-3xl rounded-tr-3xl">
+          © BertAndre. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+  );
+}
