@@ -40,7 +40,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/assets/Logo.png"
+              src="/assets/Logo.svg"
               alt="Logo"
               width={100}
               height={100}
@@ -108,7 +108,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between px-6 py-5 border-b">
             <Link href="/" onClick={() => setIsMenuOpen(false)}>
               <Image
-                src="/assets/Logo.png"
+                src="/assets/Logo.svg"
                 alt="Logo"
                 width={100}
                 height={100}
