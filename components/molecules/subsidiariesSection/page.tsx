@@ -29,6 +29,7 @@ function SubsidiaryCard({
             alt={imageAlt}
             fill
             className="object-cover"
+            loading="lazy"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>

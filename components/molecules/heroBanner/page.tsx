@@ -150,8 +150,10 @@ export default function HeroBanner() {
                 src={isMobile ? slide.mobile : slide.desktop}
                 alt={slide.alt}
                 className="w-full h-full object-contain"
-                fetchPriority={index === 0 ? "high" : "low"}
+                priority={index === 0}
                 loading={index === 0 ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : "low"}
+                sizes="(max-width: 768px) 100vw, 1720px"
               />
             </SwiperSlide>
           ))}

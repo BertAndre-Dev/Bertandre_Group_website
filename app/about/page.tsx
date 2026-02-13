@@ -70,6 +70,9 @@ export default function AboutPage() {
                 src="/assets/about-us/about-us.svg"
                 alt="BertAndre Group"
                 fill
+                blurDataURL="/assets/about-us/about-us.svg"
+                placeholder="blur"
+                loading="lazy"
                 className="object-contain py-2 px-6 md:py-6 md:px-6"
                 priority
                 sizes="(max-width: 640px) 80vw, (max-width: 1024px) 90vw, 1320px"
@@ -106,6 +109,7 @@ export default function AboutPage() {
                 alt="Our mission"
                 fill
                 className="object-contain p-6"
+                loading="lazy"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1320px"
               />
             </div>

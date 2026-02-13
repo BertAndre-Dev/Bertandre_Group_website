@@ -64,6 +64,7 @@ function SocialIcons() {
           alt="Instagram"
           width={20}
           height={20}
+          loading="lazy"
         />
       </a>
       <a
@@ -79,6 +80,7 @@ function SocialIcons() {
           alt="YouTube"
           width={20}
           height={20}
+          loading="lazy"
         />
       </a>
       <a
@@ -94,6 +96,7 @@ function SocialIcons() {
           alt="Facebook"
           width={20}
           height={20}
+          loading="lazy"
         />
       </a>
     </div>
@@ -115,10 +118,10 @@ export default function Footer() {
               <div className="flex flex-col lg:flex-row items-start lg:items-center md:gap-3">
                 <Image
                   src="/assets/Logo2.svg"
-                  // className="w-full h-full"
                   alt="Logo"
                   width={150}
                   height={150}
+                  loading="lazy"
                 />
 
                 <div>

@@ -28,7 +28,7 @@ function StatCard({ icon, value, label }: StatCardProps) {
 
 const STATS = [
   {
-    icon: <Image src="/assets/team.svg" alt="team" width={48} height={48} />,
+    icon: <Image src="/assets/team.svg" alt="team" width={48} height={48} loading="lazy" />,
     value: "12+",
     label: "Team Members",
   },
@@ -39,6 +39,7 @@ const STATS = [
         alt="handshake"
         width={48}
         height={48}
+        loading="lazy"
       />
     ),
     value: "20+",
@@ -46,7 +47,7 @@ const STATS = [
   },
   {
     icon: (
-      <Image src="/assets/setting.svg" alt="setting" width={48} height={48} />
+      <Image src="/assets/setting.svg" alt="setting" width={48} height={48} loading="lazy" />
     ),
     value: "10+",
     label: "Innovative Solutions",
