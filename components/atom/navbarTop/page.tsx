@@ -18,8 +18,8 @@ export default function NavbarTop({
 }: NavbarTopProps) {
   return (
     <div className="bg-[#1560BD] text-white py-8">
-      <div className="container mx-auto px-4 hidden lg:block">
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 md:gap-4 lg:gap-12 items-center text-sm">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-0 hidden lg:block">
+        <div className="flex flex-row items-center justify-between lg:gap-x-8 xl:gap-x-12 text-[18px]">
           {/* Phone */}
           <div className="flex items-center gap-2">
             <Phone className="w-4 h-4" />

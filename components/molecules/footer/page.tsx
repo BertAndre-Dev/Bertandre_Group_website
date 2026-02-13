@@ -103,12 +103,16 @@ function SocialIcons() {
 export default function Footer() {
   return (
     <footer className="bg-[#1560BD]">
-      <div className="container mx-auto px-4 pt-12 pb-8 lg:pt-16 lg:pb-10">
+      <div 
+      className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-0 pt-12 pb-8 lg:pt-16 lg:pb-10"
+
+      // className="container mx-auto px-4 pt-12 pb-8 lg:pt-16 lg:pb-10"
+      >
         <div>
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex flex-col gap-1">
-              <div className="flex flex-col md:flex-row items-center md:gap-3">
+              <div className="flex flex-col lg:flex-row items-start lg:items-center md:gap-3">
                 <Image
                   src="/assets/Logo2.svg"
                   // className="w-full h-full"
@@ -118,10 +122,10 @@ export default function Footer() {
                 />
 
                 <div>
-                  <span className="text-white text-base md:text-[22px] lg:text-[32px] pt-2 md:pt-0 font-light block">
+                  <span className="text-white text-base md:text-[18px] lg:text-[32px] pt-2 md:pt-0 font-light block">
                     BertAndre Group
                   </span>
-                  <p className="text-white text-sm md:text-[18px] font-light hidden sm:block">
+                  <p className="text-white text-sm md:text-[16px] lg:text-[18px] font-light hidden sm:block">
                     Purpose-driven ventures. Built to scale.
                   </p>
                 </div>

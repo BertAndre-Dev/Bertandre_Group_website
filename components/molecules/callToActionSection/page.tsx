@@ -7,7 +7,7 @@ import Pill from "@/components/atom/pill/page";
 
 export default function CallToActionSection() {
   return (
-    <section className="bg-white pb-12 pt-24 lg:pb-16 lg:pt-20">
+    <section className="bg-white pb-12 pt-18 lg:pb-16 lg:pt-20">
       <div className="container mx-auto">
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto gap-6">
           <Pill className="px-6 py-2" active>

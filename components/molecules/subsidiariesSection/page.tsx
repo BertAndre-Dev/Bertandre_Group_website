@@ -21,7 +21,7 @@ function SubsidiaryCard({
   linkHref,
 }: SubsidiaryCardProps) {
   return (
-    <article className="bg-white rounded-2xl shadow-sm border border-gray-100/80 hover:shadow-md transition-shadow">
+    <article className="bg-white rounded-4xl shadow-sm border border-gray-100/80 hover:shadow-md transition-shadow">
       <div className="p-5 sm:p-6">
         <div className="relative w-full aspect-[16/10] overflow-hidden rounded-lg border-2 mb-8">
           <Image
@@ -89,8 +89,8 @@ const SUBSIDIARIES: SubsidiaryCardProps[] = [
 export default function SubsidiariesSection() {
   return (
     <section className="bg-[#D0DFF2]">
-      <div className="container mx-auto mx-auto px-6 md:px-8 lg:px-10 xl:px-0">
-        <div className="flex justify-center mb-10 lg:mb-12">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-0">
+        <div className="flex justify-center mb-10 pt-6  lg:mb-12">
           <Pill
             className="bg-white border border-[#1560BD] text-[#1560BD]"
             active
@@ -98,7 +98,7 @@ export default function SubsidiariesSection() {
             Subsidiaries
           </Pill>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 max-w-5xl pb-12 md:pb-20 mx-auto">
           {SUBSIDIARIES.map((sub) => (
             <SubsidiaryCard
               key={sub.title}

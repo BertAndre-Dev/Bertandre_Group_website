@@ -65,7 +65,7 @@ export default function AboutPage() {
         {/* Hero: Banner image */}
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-10 pb-6 sm:pb-8">
           <div className="max-w-[1320px] border border-[#D0DFF2] rounded-3xl  mx-auto">
-            {/* <div className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden aspect-[33/10] min-h-[150px] md:min-h-[320px] lg:min-h-[400px]">
+            <div className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden aspect-[33/10] min-h-[150px] md:min-h-[320px] lg:min-h-[400px]">
               <Image
                 src="/assets/about-us/about-us.svg"
                 alt="BertAndre Group"
@@ -74,7 +74,7 @@ export default function AboutPage() {
                 priority
                 sizes="(max-width: 640px) 80vw, (max-width: 1024px) 90vw, 1320px"
               />
-            </div> */}
+            </div>
           </div>
         </section>
 

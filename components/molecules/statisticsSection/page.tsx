@@ -56,7 +56,7 @@ const STATS = [
 export default function StatisticsSection() {
   return (
     <section className="bg-[#F7F7F7]">
-      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-0 py-12 md:py-20">
+      <div className="container mx-auto my-12 md:my-20 px-6 md:px-8 lg:px-10 xl:px-0 py-12 md:py-20">
         <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-12 md:gap-8">
           {STATS.map((stat) => (
             <StatCard
