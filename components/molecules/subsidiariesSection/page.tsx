@@ -1,8 +1,8 @@
 "use client";
-
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import Pill from "@/components/atom/pill/page";
 
 export interface SubsidiaryCardProps {
@@ -20,10 +20,43 @@ function SubsidiaryCard({
   description,
   linkHref,
 }: SubsidiaryCardProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
-    <article className="bg-white rounded-4xl shadow-sm border border-gray-100/80 hover:shadow-md transition-shadow">
-      <div className="p-5 sm:p-6">
-        <div className="relative w-full aspect-[16/10] overflow-hidden rounded-lg border-2 mb-8">
+    <motion.article
+      className="bg-white rounded-[15px] md:rounded-[30px] shadow-sm border border-gray-100/80 hover:shadow-md transition-shadow overflow-hidden relative flex flex-col"
+      onHoverStart={() => setIsExpanded(true)}
+      onHoverEnd={() => setIsExpanded(false)}
+      onClick={() => setIsExpanded(!isExpanded)}
+    >
+      {/* Image Section - expands to fill description space */}
+      <div className="relative flex-1 overflow-hidden">
+        {/* Normal state - boxed image */}
+        <motion.div
+          className="p-5 sm:p-6"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: isExpanded ? 0 : 1 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className="relative w-full aspect-[16/10] overflow-hidden rounded-lg border-2">
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              fill
+              className="object-cover"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
+        </motion.div>
+
+        {/* Expanded state - full background image */}
+        <motion.div
+          className="absolute inset-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isExpanded ? 1 : 0 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+        >
           <Image
             src={imageSrc}
             alt={imageAlt}
@@ -32,29 +65,69 @@ function SubsidiaryCard({
             loading="lazy"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
-        </div>
-        <h3 className="text-base md:text-xl font-semibold text-[#1560BD] mb-2">
+          {/* Dark overlay for title readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+        </motion.div>
+
+        {/* Title overlaid on image (only visible on hover) */}
+        <motion.div
+          className="absolute bottom-0 left-0 right-0 px-5 sm:px-6 pb-4 z-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isExpanded ? 1 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <h3 className="text-base md:text-xl font-semibold text-white">
+            {title}
+          </h3>
+        </motion.div>
+      </div>
+
+      {/* Text Content Section - separate from image */}
+      <div className="px-5 md:px-6 pb-5 md:pb-6 mt-2 md:mt-0 bg-white relative z-20">
+        {/* Title in normal state (hidden on hover) */}
+        <motion.h3
+          className="text-base md:text-xl font-semibold text-[#1560BD] mb-2"
+          initial={{ opacity: 1 }}
+          animate={{ 
+            opacity: isExpanded ? 0 : 1, 
+            height: isExpanded ? 0 : "auto", 
+            marginBottom: isExpanded ? 0 : "0.5rem" 
+          }}
+          transition={{ duration: 0.3 }}
+        >
           {title}
-        </h3>
-        <p className="text-[#4C4C4C] text-sm sm:text-base leading-relaxed mb-4">
-          {description}
-        </p>
+        </motion.h3>
+
+        {/* Description (fades out and collapses) */}
+        <AnimatePresence initial={false}>
+          {!isExpanded && (
+            <motion.p
+              className="text-sm sm:text-base leading-relaxed text-[#4C4C4C] mb-4"
+              initial={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0, marginBottom: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {description}
+            </motion.p>
+          )}
+        </AnimatePresence>
+
+        {/* Link (always visible, stays below image) */}
         <Link
           href={linkHref}
-          className="inline-flex items-center gap-1 text-[#1560BD] font-medium text-[14px] md:text-[16px] hover:underline"
+          className="inline-flex items-center gap-1 cursor-pointer text-[#1560BD] font-medium text-[14px] md:text-[16px] hover:underline"
         >
           Learn more
           <span aria-hidden="true"> →</span>
         </Link>
       </div>
-    </article>
+    </motion.article>
   );
 }
 
 const SUBSIDIARIES: SubsidiaryCardProps[] = [
   {
-    imageSrc:
-      "/assets/consulting.svg",
+    imageSrc: "/assets/consulting.svg",
     imageAlt: "BertAndre Consulting – strategy and advisory",
     title: "BertAndre Consulting",
     description:
@@ -91,7 +164,7 @@ export default function SubsidiariesSection() {
   return (
     <section className="bg-[#D0DFF2]">
       <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-0">
-        <div className="flex justify-center mb-10 pt-6  lg:mb-12">
+        <div className="flex justify-center mb-10 pt-6 lg:mb-12">
           <Pill
             className="bg-white border border-[#1560BD] text-[#1560BD]"
             active
