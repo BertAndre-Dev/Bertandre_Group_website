@@ -47,7 +47,7 @@ export default function AboutSection() {
   return (
     <section className="bg-white">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-10 xl:gap-16">
+        <div className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-10 xl:gap-16">
           {/* Left column: About Us */}
           <div>
             <Pill className="mb-6" active>

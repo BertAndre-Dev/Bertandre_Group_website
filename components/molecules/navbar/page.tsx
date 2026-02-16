@@ -103,9 +103,17 @@ export default function Navbar() {
 
       {/* Mobile Fullscreen Menu */}
       {isMenuOpen && (
-        // <div className="fixed inset-0 z-[999] bg-white md:hidden">
-        <div className="fixed inset-0 z-999 bg-white lg:hidden">
-          <div className="flex items-center justify-between px-6 py-5 border-b">
+        <div className="fixed inset-0 z-999 bg-white lg:hidden overflow-y-auto">
+          {/* NavbarTop in Mobile Menu */}
+          <NavbarTop
+            phone="+234 123 456 7890"
+            email="info@bertandregroup.com"
+            address="20 Audu Ekphega street Lekki Phase 1"
+            instagramUrl="https://instagram.com/bertandregroup"
+            facebookUrl="https://facebook.com/bertandregroup"
+          />
+
+          <div className="flex items-center justify-between px-6 border-b bg-white">
             <Link href="/" onClick={() => setIsMenuOpen(false)}>
               <Image
                 src="/assets/Logo.svg"
@@ -127,7 +135,7 @@ export default function Navbar() {
             </Button>
           </div>
 
-          <div className="flex flex-col items-center justify-center h-[calc(80vh-210px)] gap-y-12">
+          <div className="flex flex-col items-center justify-center min-h-[calc(100vh-350px)] gap-y-12 py-8">
             {navLinks
               .filter((link) => link.label !== "Contact Us")
               .map((link) => (
@@ -144,15 +152,14 @@ export default function Navbar() {
               ))}
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center pb-8">
             <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-              <Button 
-              // className="w-full bg-[#1560BD]  py-2 text-white text-lg rounded="rounded-full" "
-              bg="bg-[#1560BD]"
-              text="text-white"
-              rounded="rounded-full"
-              padding="px-12 py-4"
-              hover="hover:bg-[#124ea0]"
+              <Button
+                bg="bg-[#1560BD]"
+                text="text-white"
+                rounded="rounded-full"
+                padding="px-12 py-4"
+                hover="hover:bg-[#124ea0]"
               >
                 Contact Us
               </Button>

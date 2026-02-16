@@ -1,91 +1,12 @@
-// "use client";
-
-// import Image from "next/image";
-// import React, { useState, useEffect } from "react";
-
-// const SLIDES = [
-//   {
-//     desktop: "/assets/sliders/consulting.svg",
-//     mobile: "/assets/sliders/consulting-mobile.svg",
-//     alt: "Consulting Services",
-//   },
-//   {
-//     desktop: "/assets/sliders/energy.svg",
-//     mobile: "/assets/sliders/energy-mobile.svg",
-//     alt: "Energy Solutions",
-//   },
-//   {
-//     desktop: "/assets/sliders/smart fleet.svg",
-//     mobile: "/assets/sliders/smart fleet-mobile.svg",
-//     alt: "Smart Fleet Management",
-//   },
-//   {
-//     desktop: "/assets/sliders/real estate.svg",
-//     mobile: "/assets/sliders/real estate-mobile.svg",
-//     alt: "Real Estate",
-//   },
-// ];
-
-// export default function HeroBanner() {
-//   const [currentSlide, setCurrentSlide] = useState(0);
-//   const [isMobile, setIsMobile] = useState(false);
-
-//   useEffect(() => {
-//     const checkMobile = () => {
-//       setIsMobile(window.innerWidth < 768);
-//     };
-
-//     checkMobile();
-//     window.addEventListener("resize", checkMobile);
-
-//     return () => window.removeEventListener("resize", checkMobile);
-//   }, []);
-
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
-//     }, 3000); // Change slide every 3 seconds
-
-//     return () => clearInterval(interval);
-//   }, []);
-
-//   return (
-//     <section className="container mx-auto pb-12 lg:pb-16">
-//       <div className="relative w-full rounded-2xl lg:rounded-3xl overflow-hidden aspect-[33/10] min-h-[240px] max-h-[420px] group">
-//         {/* Slides */}
-//         {SLIDES.map((slide, index) => (
-//           <div
-//             key={index}
-//             className={`absolute inset-0 transition-opacity duration-700 ${
-//               index === currentSlide ? "opacity-100" : "opacity-0"
-//             }`}
-//           >
-//             <Image
-//               width={1720}
-//               height={600}
-//               src={isMobile ? slide.mobile : slide.desktop}
-//               alt={slide.alt}
-//               className="md:w-full h-full md:object-cover object-contain "
-//               fetchPriority={index === 0 ? "high" : "low"}
-//               loading={index === 0 ? "eager" : "lazy"}
-//             />
-//           </div>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// }
-
-
 "use client";
 
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
+import NextImage from "next/image";
 
-// Import Swiper styles
 import "swiper/css";
+import "swiper/css/pagination";
 
 const SLIDES = [
   {
@@ -110,54 +31,129 @@ const SLIDES = [
   },
 ];
 
-export default function HeroBanner() {
-  const [isMobile, setIsMobile] = useState<boolean | null>(null);
+// Skeleton loader component
+const ImageSkeleton = () => (
+  <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-pulse">
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
+  </div>
+);
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+// Individual slide component with loading states
+const SlideImage = ({
+  slide,
+  index,
+  isMobile,
+}: {
+  slide: (typeof SLIDES)[0];
+  index: number;
+  isMobile: boolean;
+}) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
 
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
+  const src = isMobile ? slide.mobile : slide.desktop;
+  const displayClass = isMobile ? "md:hidden" : "hidden md:block";
 
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  if (isMobile === null) {
-    return null;
+  if (hasError) {
+    return (
+      <div
+        className={`relative w-full h-full flex items-center justify-center bg-gray-100 ${displayClass}`}
+      >
+        <div className="text-center p-6">
+          <svg
+            className="w-12 h-12 mx-auto text-gray-400 mb-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+            />
+          </svg>
+          <p className="text-sm text-gray-600">{slide.alt}</p>
+        </div>
+      </div>
+    );
   }
 
   return (
+    <div className={`relative w-full h-full ${displayClass}`}>
+      {isLoading && <ImageSkeleton />}
+      <NextImage
+        fill
+        src={src}
+        alt={slide.alt}
+        className={`object-cover transition-opacity duration-300 ${
+          isLoading ? "opacity-0" : "opacity-100"
+        }`}
+        priority={index === 0}
+        loading={index === 0 ? "eager" : "lazy"}
+        quality={90}
+        sizes={isMobile ? "100vw" : "1720px"}
+        onLoad={() => setIsLoading(false)}
+        onError={() => {
+          setIsLoading(false);
+          setHasError(true);
+        }}
+      />
+    </div>
+  );
+};
+
+export default function HeroBanner() {
+  const [isPaused, setIsPaused] = useState(false);
+
+  return (
     <section className="container mx-auto pb-12 lg:pb-16">
-      <div className="relative w-full rounded-2xl lg:rounded-3xl overflow-hidden aspect-[33/10] min-h-[240px] max-h-[420px]">
+      <div
+        className="relative w-full rounded-2xl lg:rounded-3xl overflow-hidden aspect-[33/10] min-h-[240px] max-h-[420px] bg-gray-50"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         <Swiper
-          modules={[Autoplay]}
+          modules={[Autoplay, Pagination]}
           spaceBetween={0}
           slidesPerView={1}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          pagination={{
+            clickable: true,
+            bulletClass: "swiper-pagination-bullet !bg-white/60",
+            bulletActiveClass: "swiper-pagination-bullet-active !bg-white",
           }}
           loop={true}
+          speed={600}
           className="h-full"
+          style={
+            {
+              "--swiper-pagination-bottom": "16px",
+              "--swiper-pagination-bullet-size": "8px",
+              "--swiper-pagination-bullet-horizontal-gap": "4px",
+            } as React.CSSProperties
+          }
         >
           {SLIDES.map((slide, index) => (
-            <SwiperSlide key={index}>
-              <Image
-                width={1720}
-                height={600}
-                src={isMobile ? slide.mobile : slide.desktop}
-                alt={slide.alt}
-                className="w-full h-full object-contain"
-                priority={index === 0}
-                loading={index === 0 ? "eager" : "lazy"}
-                fetchPriority={index === 0 ? "high" : "low"}
-                sizes="(max-width: 768px) 100vw, 1720px"
-              />
+            <SwiperSlide key={index} className="h-full">
+              {/* Mobile Image */}
+              <SlideImage slide={slide} index={index} isMobile={true} />
+              {/* Desktop Image */}
+              <SlideImage slide={slide} index={index} isMobile={false} />
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* Optional: Pause indicator */}
+        {isPaused && (
+          <div className="absolute top-4 right-4 bg-black/50 text-white text-xs px-2 py-1 rounded backdrop-blur-sm">
+            Paused
+          </div>
+        )}
       </div>
     </section>
   );

@@ -18,8 +18,8 @@ export default function NavbarTop({
 }: NavbarTopProps) {
   return (
     <div className="bg-[#1560BD] text-white py-8">
-      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-0 hidden lg:block">
-        <div className="flex flex-row items-center justify-between lg:gap-x-8 xl:gap-x-12 text-[18px]">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-0 hidden sm:block">
+        <div className="hidden lg:flex flex flex-row items-center justify-between lg:gap-x-8 xl:gap-x-12 text-[18px]">
           {/* Phone */}
           <div className="flex items-center gap-2">
             <Phone className="w-4 h-4" />
@@ -44,7 +44,7 @@ export default function NavbarTop({
 
           {/* Address */}
           <div className="flex items-center gap-2 lg:col-span-2">
-            <MapPin className="w-4 h-4 flex-shrink-0" />
+            <MapPin className="w-4 h-4 shrink-0" />
             <span className="text-base font-medium">{address}</span>
           </div>
 

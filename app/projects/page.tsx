@@ -13,8 +13,10 @@ export const metadata: Metadata = {
 
 const PROJECT_ITEMS = [
   {
-    imageSrc: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1320&q=80",
+    imageSrc: "/assets/about-us/about-us.svg",
     imageAlt: "Berta Estate Hub - estate and community management",
+    imageSrcMobile:"/assets/about-us/about-us-mobile.svg",
+    imageAltMobile:"",
     category: "PROPERTY MANAGEMENT",
     title: "Berta Estate Hub App",
     description:
@@ -46,6 +48,7 @@ export default function ProjectsPage() {
                   key={item.title}
                   imageSrc={item.imageSrc}
                   imageAlt={item.imageAlt}
+                  imageSrcMobile={item.imageSrcMobile}
                   category={item.category}
                   title={item.title}
                   description={item.description}

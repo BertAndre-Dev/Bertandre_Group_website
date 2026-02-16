@@ -64,19 +64,29 @@ export default function AboutPage() {
       <main>
         {/* Hero: Banner image */}
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-10 pb-6 sm:pb-8">
-          <div className="max-w-[1320px] border border-[#D0DFF2] rounded-3xl  mx-auto">
-            <div className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden aspect-[33/10] min-h-[150px] md:min-h-[320px] lg:min-h-[400px]">
-              <Image
-                src="/assets/about-us/about-us.svg"
-                alt="BertAndre Group"
-                fill
-                blurDataURL="/assets/about-us/about-us.svg"
-                placeholder="blur"
-                loading="lazy"
-                className="object-contain py-2 px-6 md:py-6 md:px-6"
-                priority
-                sizes="(max-width: 640px) 80vw, (max-width: 1024px) 90vw, 1320px"
-              />
+          <div className="border border-[#D0DFF2] rounded-[15px] md:rounded-[30px] mx-auto overflow-hidden">
+            <div className="p-4 sm:p-6 md:p-6">
+              <div className="relative w-full rounded-[10px] md:rounded-[20px] overflow-hidden min-h-[250px] md:min-h-0 md:aspect-[33/10]">
+                {/* Mobile Image */}
+                <Image
+                  src="/assets/about-us/about-us-mobile.svg"
+                  alt="BertAndre Group"
+                  fill
+                  className="object-cover md:hidden"
+                  priority
+                  sizes="100vw"
+                />
+
+                {/* Desktop Image */}
+                <Image
+                  src="/assets/about-us/about-us.svg"
+                  alt="BertAndre Group"
+                  fill
+                  className="object-contain hidden md:block"
+                  priority
+                  sizes="(max-width: 1024px) 90vw, 1320px"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -84,7 +94,7 @@ export default function AboutPage() {
         {/* About Us pill + intro text */}
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 pb-10 sm:pb-12 lg:pb-16">
           <div className="max-w-[1320px] mx-auto">
-            <Pill className="px-8 mb-6 sm:mb-8 mt-12" active>
+            <Pill className="px-8 my-6 md:mb-8" active>
               {ABOUT_COPY.pill}
             </Pill>
             <div className="space-y-3">
@@ -101,19 +111,34 @@ export default function AboutPage() {
         </section>
 
         {/* Mission: Image + heading + numbered list */}
+
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-10 pb-6 sm:pb-8">
-          <div className="max-w-[1320px] border border-[#D0DFF2] rounded-3xl  mx-auto">
-            <div className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden aspect-[33/10] min-h-[150px] md:min-h-[320px] lg:min-h-[400px]">
-              <Image
-                src="/assets/about-us/about-us1.svg"
-                alt="Our mission"
-                fill
-                className="object-contain p-6"
-                loading="lazy"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1320px"
-              />
+          <div className="border border-[#D0DFF2] rounded-[15px] md:rounded-[30px] mx-auto overflow-hidden">
+            <div className="p-4 sm:p-6 md:p-6">
+              <div className="relative w-full rounded-[10px] md:rounded-[20px] overflow-hidden min-h-[250px] md:min-h-0 md:aspect-[33/10]">
+                {/* Mobile Image */}
+                <Image
+                  src="/assets/about-us/vision-mobile.svg"
+                  alt="BertAndre Group"
+                  fill
+                  className="object-cover md:hidden"
+                  priority
+                  sizes="100vw"
+                />
+
+                {/* Desktop Image */}
+                <Image
+                  src="/assets/about-us/vision.svg"
+                  alt="BertAndre Group"
+                  fill
+                  className="object-contain hidden md:block"
+                  priority
+                  sizes="(max-width: 1024px) 90vw, 1320px"
+                />
+              </div>
             </div>
           </div>
+
           <div className="pt-6">
             <h2 className="text-[#1560BD] text-base md:text-[20px] xl:text-[24px] font-medium mb-4 md:mb-8">
               Mission
