@@ -14,7 +14,7 @@ const SLIDES = [
     src: "/assets/sliders/consulting.svg",
     alt: "Consulting Services",
     description:
-      "Clarity drives growth. We combine strategy, financial insight, and technology to help businesses make informed decisions, navigate complexity, and scale with confidence.",
+      "“Clarity drives growth. We combine strategy, financial insight, and technology to help businesses make informed decisions, navigate complexity, and scale with confidence.”",
     icon: (
       <svg
         className="w-5 h-5 shrink-0"
@@ -37,7 +37,7 @@ const SLIDES = [
     src: "/assets/sliders/saair.svg",
     alt: "Energy Solutions",
     description:
-      "Reliable energy is the foundation of productivity. We design practical energy solutions that power communities, estates, and enterprises today while enabling sustainable infrastructure for tomorrow.",
+      "“Reliable energy is the foundation of productivity. We design practical energy solutions that power communities, estates, and enterprises today while enabling sustainable infrastructure for tomorrow.”",
     icon: (
       <svg
         className="w-5 h-5 shrink-0"
@@ -60,7 +60,7 @@ const SLIDES = [
     src: "/assets/sliders/autodate.svg",
     alt: "Smart Fleet Management",
     description:
-      "Mobility should be efficient, compliant, and predictable. We simplify fleet operations and vehicle administration so businesses can focus on performance, not paperwork.",
+      "“Mobility should be efficient, compliant, and predictable. We simplify fleet operations and vehicle administration so businesses can focus on performance, not paperwork.”",
     icon: (
       <svg
         className="w-5 h-5 shrink-0"
@@ -89,7 +89,7 @@ const SLIDES = [
     src: "/assets/sliders/prim.svg",
     alt: "Real Estate",
     description:
-      "Real estate value is built over time. We develop and manage properties with discipline, transparency, and technology-driven efficiency to deliver long-term asset value.",
+      "“Real estate value is built over time. We develop and manage properties with discipline, transparency, and technology-driven efficiency to deliver long-term asset value.”",
     icon: (
       <svg
         className="w-5 h-5 shrink-0"
@@ -129,7 +129,7 @@ export default function HeroBanner() {
                   setActiveIndex(index);
                 }}
                 className={`
-                  flex shrink-0 items-center justify-center gap-2 rounded-full px-2.5 py-2 sm:px-5 sm:py-2.5 text-sm font-medium transition-colors min-w-0
+                  flex shrink-0 items-center justify-center gap-2 rounded-full px-2.5 py-2 sm:px-5 sm:py-2.5 text-sm font-medium cursor-pointer transition-colors min-w-0
                   ${
                     isActive
                       ? "bg-white text-[#1560BD] shadow-md border border-[#1560BD]/20"
@@ -170,7 +170,7 @@ export default function HeroBanner() {
                 />
                 {/* Text overlay */}
                 <div className="absolute inset-0 flex items-end justify-center p-4 sm:p-6 lg:p-8 pb-8 sm:pb-10 lg:pb-12">
-                  <div className="w-full max-w-3xl rounded-2xl bg-white/90 backdrop-blur-sm px-4 py-4 sm:px-6 sm:py-5 shadow-sm border border-white/80">
+                  <div className="w-full lg:w-2/3 max-w-3xl rounded-2xl bg-white/90 backdrop-blur-sm px-4 py-4 sm:px-6 sm:py-5 shadow-sm border border-white/80">
                     <p className="text-[#4C4C4C] text-sm sm:text-base lg:text-lg leading-relaxed">
                       {slide.description}
                     </p>
