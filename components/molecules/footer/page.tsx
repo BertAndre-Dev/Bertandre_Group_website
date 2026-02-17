@@ -52,7 +52,7 @@ function SocialIcons() {
   return (
     <div className="flex items-center gap-3 mt-2">
       <a
-        href="https://instagram.com/bertandregroup"
+        href="https://www.instagram.com/bertandregroup?igsh=MWIwZzlnZHRzb2gweQ=="
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:bg-white/20 transition-colors text-white"
@@ -84,7 +84,7 @@ function SocialIcons() {
         />
       </a>
       <a
-        href="https://facebook.com/bertandregroup"
+        href="https://www.facebook.com/share/18D87Hinyn/?mibextid=wwXIfr"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:bg-white/20 transition-colors text-white"

@@ -16,7 +16,13 @@ interface SlideData {
   icon: React.ReactNode;
 }
 
-function SlideContent({ slide, index }: { readonly slide: SlideData; readonly index: number }) {
+function SlideContent({
+  slide,
+  index,
+}: {
+  readonly slide: SlideData;
+  readonly index: number;
+}) {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
@@ -32,16 +38,20 @@ function SlideContent({ slide, index }: { readonly slide: SlideData; readonly in
         sizes="(max-width: 1024px) 100vw, 1720px"
         onLoad={() => setImageLoaded(true)}
       />
-      {/* Placeholder while image loads */}
       {!imageLoaded && (
         <div
           className="absolute inset-0 bg-gray-200 animate-pulse"
           aria-hidden
         />
       )}
-      {/* Text overlay only after image is ready */}
       {imageLoaded && (
-        <div className="absolute inset-0 flex items-end justify-center p-4 sm:p-6 lg:p-8 pb-8 sm:pb-10 lg:pb-12">
+        <div
+          className="absolute inset-0 flex items-end justify-center p-4 sm:p-6 lg:p-8 pb-8 sm:pb-10 lg:pb-12"
+          style={{
+            background:
+              "linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3))",
+          }}
+        >
           <div className="w-full lg:w-2/3 xl:w-2/4 max-w-3xl rounded-2xl bg-white/90 backdrop-blur-sm px-4 py-4 sm:px-6 sm:py-5 shadow-sm border border-white/80">
             <p className="text-[#4C4C4C] text-sm sm:text-base lg:text-lg leading-relaxed">
               {slide.description}
@@ -161,7 +171,6 @@ export default function HeroBanner() {
   return (
     <section className="container mx-auto pb-12 lg:pb-16">
       <div className="relative w-full rounded-2xl lg:rounded-3xl overflow-hidden aspect-33/10 min-h-[240px] max-h-[420px] bg-gray-50">
-        {/* Category buttons – overlaid at top, four on same line */}
         <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 flex flex-nowrap items-center justify-center gap-1.5 sm:gap-3 px-2 min-w-0 max-w-[calc(100%-1rem)]">
           {SLIDES.map((slide, index) => {
             const isActive = activeIndex === index;
@@ -183,9 +192,12 @@ export default function HeroBanner() {
                   }
                 `}
               >
-                {/* Mobile: active = label only, inactive = icon only. Desktop: both */}
-                <span className={isActive ? "hidden sm:block" : "block"}>{slide.icon}</span>
-                <span className={isActive ? "block" : "hidden sm:inline"}>{slide.label}</span>
+                <span className={isActive ? "hidden sm:block" : "block"}>
+                  {slide.icon}
+                </span>
+                <span className={isActive ? "block" : "hidden sm:inline"}>
+                  {slide.label}
+                </span>
               </button>
             );
           })}

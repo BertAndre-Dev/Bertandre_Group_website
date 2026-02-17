@@ -38,7 +38,7 @@ function InfoCard({
       <h3 className="text-base md:text-lg font-semibold text-[#1560BD] flex items-center gap-2 mb-2">
         {title}
       </h3>
-      <p className="text-[#4C4C4C] text-base leading-relaxed">{text}</p>
+      <p className="text-[#4C4C4C] text-[14px] md:text-[20px] leading-relaxed">{text}</p>
     </div>
   );
 }

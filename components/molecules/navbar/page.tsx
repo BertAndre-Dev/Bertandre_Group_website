@@ -30,8 +30,8 @@ export default function Navbar() {
         phone="+234 123 456 7890"
         email="info@bertandregroup.com"
         address="20 Audu Ekphega street Lekki Phase 1"
-        instagramUrl="https://instagram.com/bertandregroup"
-        facebookUrl="https://facebook.com/bertandregroup"
+        instagramUrl="https://www.instagram.com/bertandregroup?igsh=MWIwZzlnZHRzb2gweQ=="
+        facebookUrl="https://www.facebook.com/share/18D87Hinyn/?mibextid=wwXIfr"
       />
 
       {/* Main Navbar */}
@@ -109,8 +109,8 @@ export default function Navbar() {
             phone="+234 123 456 7890"
             email="info@bertandregroup.com"
             address="20 Audu Ekphega street Lekki Phase 1"
-            instagramUrl="https://instagram.com/bertandregroup"
-            facebookUrl="https://facebook.com/bertandregroup"
+            instagramUrl="https://www.instagram.com/bertandregroup?igsh=MWIwZzlnZHRzb2gweQ=="
+            facebookUrl="https://www.facebook.com/share/18D87Hinyn/?mibextid=wwXIfr"
           />
 
           <div className="flex items-center justify-between px-6 border-b bg-white">
