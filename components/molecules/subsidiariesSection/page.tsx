@@ -5,6 +5,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Pill from "@/components/atom/pill/page";
 
+// Smoother, consistent motion config
+const transition = { type: "tween" as const, duration: 0.35, ease: "easeOut" as const };
+const overlayTransition = { type: "tween" as const, duration: 0.4, ease: "easeInOut" as const };
+
 export interface SubsidiaryCardProps {
   readonly imageSrc: string;
   readonly imageAlt: string;
@@ -33,11 +37,11 @@ function SubsidiaryCard({
         onHoverEnd={() => setIsExpanded(false)}
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        {/* Default state — fades out entirely on hover */}
+        {/* Default state — fades out on hover */}
         <motion.div
           className="flex flex-col md:flex-row md:items-center"
           animate={{ opacity: isExpanded ? 0 : 1 }}
-          transition={{ duration: 0.3 }}
+          transition={transition}
         >
           {/* Text - Left */}
           <div className="px-5 md:px-6 py-5 md:py-6 md:w-1/2 order-2 md:order-1">
@@ -72,9 +76,9 @@ function SubsidiaryCard({
         {/* Hover overlay — full-card image with title + Learn more at bottom */}
         <motion.div
           className="absolute inset-0"
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={{ opacity: isExpanded ? 1 : 0 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
+          transition={overlayTransition}
         >
           <Image
             src={imageSrc}
@@ -115,9 +119,9 @@ function SubsidiaryCard({
       <div className="relative flex-1 overflow-hidden">
         <motion.div
           className="p-5 sm:p-6"
-          initial={{ opacity: 1 }}
+          initial={false}
           animate={{ opacity: isExpanded ? 0 : 1 }}
-          transition={{ duration: 0.3 }}
+          transition={transition}
         >
           <div className="relative w-full aspect-16/10 overflow-hidden rounded-lg border-2">
             <Image
@@ -133,9 +137,9 @@ function SubsidiaryCard({
 
         <motion.div
           className="absolute inset-0"
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={{ opacity: isExpanded ? 1 : 0 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
+          transition={overlayTransition}
         >
           <Image
             src={imageSrc}
@@ -150,9 +154,9 @@ function SubsidiaryCard({
 
         <motion.div
           className="absolute bottom-0 left-0 right-0 z-10 px-5 sm:px-6 pb-4"
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={{ opacity: isExpanded ? 1 : 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ ...transition, delay: isExpanded ? 0.08 : 0 }}
         >
           <h3 className="text-base md:text-xl font-semibold text-white">
             {title}
@@ -162,26 +166,23 @@ function SubsidiaryCard({
 
       <div className="px-5 md:px-6 pb-5 md:pb-6 mt-2 md:mt-0 bg-white relative z-20">
         <motion.h3
-          className="text-base md:text-xl font-semibold text-[#1560BD] mb-2"
-          initial={{ opacity: 1 }}
+          className="text-base md:text-xl font-semibold text-[#1560BD] mb-2 overflow-hidden"
+          initial={false}
           animate={{
             opacity: isExpanded ? 0 : 1,
-            height: isExpanded ? 0 : "auto",
-            marginBottom: isExpanded ? 0 : "0.5rem",
           }}
-          transition={{ duration: 0.3 }}
+          transition={transition}
         >
           {title}
         </motion.h3>
 
         <motion.p
-          className="text-sm sm:text-base leading-relaxed text-[#4C4C4C] mb-4"
+          className="text-sm sm:text-base leading-relaxed text-[#4C4C4C] mb-4 overflow-hidden"
+          initial={false}
           animate={{
             opacity: isExpanded ? 0 : 1,
-            height: isExpanded ? 0 : "auto",
-            marginBottom: isExpanded ? 0 : "1rem",
           }}
-          transition={{ duration: 0.3 }}
+          transition={transition}
         >
           {description}
         </motion.p>

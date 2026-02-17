@@ -7,6 +7,52 @@ import NextImage from "next/image";
 
 import "swiper/css";
 
+interface SlideData {
+  id: string;
+  label: string;
+  src: string;
+  alt: string;
+  description: string;
+  icon: React.ReactNode;
+}
+
+function SlideContent({ slide, index }: { readonly slide: SlideData; readonly index: number }) {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  return (
+    <div className="relative w-full h-full">
+      <NextImage
+        fill
+        src={slide.src}
+        alt={slide.alt}
+        className="object-cover transition-opacity duration-300"
+        style={{ opacity: imageLoaded ? 1 : 0 }}
+        priority={index === 0}
+        loading={index === 0 ? "eager" : "lazy"}
+        sizes="(max-width: 1024px) 100vw, 1720px"
+        onLoad={() => setImageLoaded(true)}
+      />
+      {/* Placeholder while image loads */}
+      {!imageLoaded && (
+        <div
+          className="absolute inset-0 bg-gray-200 animate-pulse"
+          aria-hidden
+        />
+      )}
+      {/* Text overlay only after image is ready */}
+      {imageLoaded && (
+        <div className="absolute inset-0 flex items-end justify-center p-4 sm:p-6 lg:p-8 pb-8 sm:pb-10 lg:pb-12">
+          <div className="w-full lg:w-2/3 xl:w-2/4 max-w-3xl rounded-2xl bg-white/90 backdrop-blur-sm px-4 py-4 sm:px-6 sm:py-5 shadow-sm border border-white/80">
+            <p className="text-[#4C4C4C] text-sm sm:text-base lg:text-lg leading-relaxed">
+              {slide.description}
+            </p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 const SLIDES = [
   {
     id: "consulting",
@@ -158,25 +204,7 @@ export default function HeroBanner() {
         >
           {SLIDES.map((slide, index) => (
             <SwiperSlide key={slide.id} className="h-full">
-              <div className="relative w-full h-full">
-                <NextImage
-                  fill
-                  src={slide.src}
-                  alt={slide.alt}
-                  className="object-cover"
-                  priority={index === 0}
-                  loading={index === 0 ? "eager" : "lazy"}
-                  sizes="(max-width: 1024px) 100vw, 1720px"
-                />
-                {/* Text overlay */}
-                <div className="absolute inset-0 flex items-end justify-center p-4 sm:p-6 lg:p-8 pb-8 sm:pb-10 lg:pb-12">
-                  <div className="w-full lg:w-2/3 max-w-3xl rounded-2xl bg-white/90 backdrop-blur-sm px-4 py-4 sm:px-6 sm:py-5 shadow-sm border border-white/80">
-                    <p className="text-[#4C4C4C] text-sm sm:text-base lg:text-lg leading-relaxed">
-                      {slide.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <SlideContent slide={slide} index={index} />
             </SwiperSlide>
           ))}
         </Swiper>
