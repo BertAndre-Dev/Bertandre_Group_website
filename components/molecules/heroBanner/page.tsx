@@ -398,7 +398,7 @@ export default function HeroBanner() {
 
   return (
     <section className="container mx-auto pb-12 lg:pb-16">
-      <div className="relative w-full rounded-2xl lg:rounded-3xl overflow-hidden aspect-33/10 min-h-[240px] max-h-[420px] bg-gray-50">
+      <div className="relative w-full rounded-2xl lg:rounded-3xl overflow-hidden aspect-33/10 h-full min-h-[240px] max-h-[420px] bg-gray-50">
         <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 flex flex-nowrap items-center justify-center gap-1.5 sm:gap-3 px-2 min-w-0 max-w-[calc(100%-1rem)]">
           {SLIDES.map((slide, index) => {
             const isActive = activeIndex === index;
