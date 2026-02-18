@@ -17,7 +17,7 @@ export default function NavbarTop({
   facebookUrl,
 }: NavbarTopProps) {
   return (
-    <div className="bg-[#1560BD] text-white py-8">
+    <div className="bg-[#1560BD] text-white py-8 hidden sm:block">
       <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-0 hidden sm:block">
         <div className="hidden lg:flex flex flex-row items-center justify-between lg:gap-x-8 xl:gap-x-12 text-[18px]">
           {/* Phone */}
