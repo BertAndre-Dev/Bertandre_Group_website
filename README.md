@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BertAndre Group
 
-## Getting Started
+Corporate website for **BertAndre Group** — a diversified holding company building purpose-driven ventures across consulting, real estate, energy, mobility, and technology.
 
-First, run the development server:
+## Tech stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **[Next.js 16](https://nextjs.org/)** (App Router) — React framework with server and client components
+- **[React 19](https://react.dev/)** — UI library
+- **[TypeScript](https://www.typescriptlang.org/)** — Type safety
+- **[Tailwind CSS 4](https://tailwindcss.com/)** — Styling
+- **[Framer Motion](https://www.framer.com/motion/)** — Animations (e.g. Subsidiaries section)
+- **[Swiper](https://swiperjs.com/)** — Hero banner slider
+- **[Lucide React](https://lucide-react.dev/)** — Icons (navbar top bar)
+
+## Prerequisites
+
+- **Node.js** 18.18+ (or 20+)
+- **npm** (or yarn / pnpm)
+
+## Getting started
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd bertandre-group
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Scripts
+
+| Command        | Description                    |
+|----------------|--------------------------------|
+| `npm run dev`  | Start dev server (hot reload)  |
+| `npm run build`| Production build              |
+| `npm run start`| Run production server         |
+| `npm run lint` | Run ESLint                    |
+
+## Project structure
+
+```
+bertandre-group/
+├── app/                    # Next.js App Router
+│   ├── layout.tsx          # Root layout, fonts, metadata
+│   ├── page.tsx            # Home
+│   ├── about/              # About Us
+│   ├── subsidiaries/       # Subsidiaries
+│   ├── portfolio/          # Portfolio
+│   ├── projects/           # Projects
+│   ├── contact/            # Contact Us
+│   ├── not-found.tsx       # 404 page
+│   └── globals.css         # Global styles
+├── components/
+│   ├── atom/               # Small reusable UI (Button, Pill, NavbarTop)
+│   └── molecules/          # Section components (Navbar, HeroBanner, Footer, etc.)
+├── public/
+│   └── assets/             # Images, logos, SVGs
+├── next.config.ts
+├── package.json
+└── tailwind.config.ts      # (if present)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Main pages and features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Home** — Hero, category slider (Consulting, Energy, Smart Fleet, Real Estate), about snippet, statistics, subsidiaries grid, CTA
+- **About Us** — Company story, mission, vision, values
+- **Subsidiaries** — BertAndre Consulting, SAAIR Energy, Primquisite Real Estate, Autodate Smart Fleet (with external links)
+- **Portfolio** — Portfolio items and project cards
+- **Projects** — Project listings
+- **Contact** — Contact form and contact cards (email, phone, address)
+- **404** — Custom not-found page with “Go to home”
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Configuration
 
-## Learn More
+- **Images** — Next.js Image is used throughout. External image hosts are allowed in `next.config.ts` (e.g. `images.unsplash.com`, `placeholder.com`). Add other domains there if needed.
+- **Fonts** — Geist Sans and Geist Mono are loaded via `next/font` in the root layout.
 
-To learn more about Next.js, take a look at the following resources:
+## Building for production
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+npm run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+For static export (if configured), use the appropriate Next.js output option in `next.config.ts`.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Private — BertAndre Group.
