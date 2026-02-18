@@ -41,7 +41,7 @@ function SubsidiaryCard({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-[#1560BD] font-medium text-[14px] md:text-[16px] hover:underline"
             >
-              {/* Learn more <span aria-hidden="true">→</span> */}
+              Learn more <span aria-hidden="true">→</span>
             </Link>
           </div>
 
