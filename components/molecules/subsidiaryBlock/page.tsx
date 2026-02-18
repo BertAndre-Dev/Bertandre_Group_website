@@ -48,11 +48,8 @@ export default function SubsidiaryBlock({
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1 text-[#1560BD] font-medium text-[14px] md:text-[20px] hover:underline"
         >
-          {/* Mobile */}
-          <span className="md:hidden">Learn more</span>
-
           {/* Desktop */}
-          <span className="hidden md:inline">{linkLabel}</span>
+          <span className="">{linkLabel}</span>
 
           <span aria-hidden="true"> →</span>
         </Link>

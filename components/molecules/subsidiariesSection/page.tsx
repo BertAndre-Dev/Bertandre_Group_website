@@ -35,9 +35,14 @@ function SubsidiaryCard({
             <p className="text-sm sm:text-base leading-relaxed text-[#4C4C4C] mb-4">
               {description}
             </p>
-            <span className="inline-flex items-center gap-1 text-[#1560BD] font-medium text-[14px] md:text-[16px]">
-              Learn more <span aria-hidden="true">→</span>
-            </span>
+            <Link
+              href={linkHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-[#1560BD] font-medium text-[14px] md:text-[16px] hover:underline"
+            >
+              {/* Learn more <span aria-hidden="true">→</span> */}
+            </Link>
           </div>
 
           {/* Image - Right */}
@@ -74,6 +79,8 @@ function SubsidiaryCard({
             </h3>
             <Link
               href={linkHref}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
               className="inline-flex items-center gap-1 cursor-pointer text-white font-medium text-[14px] md:text-[16px] hover:underline"
             >
@@ -132,6 +139,8 @@ function SubsidiaryCard({
 
         <Link
           href={linkHref}
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}
           className="inline-flex items-center gap-1 cursor-pointer text-[#1560BD] font-medium text-[14px] md:text-[16px] hover:underline"
         >
@@ -150,7 +159,7 @@ const SUBSIDIARIES: SubsidiaryCardProps[] = [
     title: "BertAndre Consulting",
     description:
       "Strategy-led advisory and technology solutions supporting business growth and transformation.",
-    linkHref: "/subsidiaries/bertandre-consulting",
+    linkHref: "https://www.bertandreconsulting.com/",
     layout: "normal",
   },
   {
@@ -159,7 +168,7 @@ const SUBSIDIARIES: SubsidiaryCardProps[] = [
     title: "SAAIR Energy",
     description:
       "Integrated energy solutions focused on metering, monitoring, and scalable energy infrastructure.",
-    linkHref: "/subsidiaries/saair-energy",
+    linkHref: "https://saairenergy.com/",
     layout: "image-right",
   },
   {
@@ -168,7 +177,7 @@ const SUBSIDIARIES: SubsidiaryCardProps[] = [
     title: "Primquisite Real Estate",
     description:
       "Property development and PropTech-driven estate solutions delivering long-term asset value.",
-    linkHref: "/subsidiaries/primquisite-real-estate",
+    linkHref: "https://www.linkedin.com/company/primquisite-real-estae/",
     layout: "image-right",
   },
   {
@@ -177,7 +186,7 @@ const SUBSIDIARIES: SubsidiaryCardProps[] = [
     title: "Autodate Smart Fleet",
     description:
       "Technology-enabled fleet administration and mobility management for enterprises.",
-    linkHref: "/subsidiaries/autodate-smart-fleet",
+    linkHref: "https://www.linkedin.com/company/autodate-smart-fleet/",
     layout: "normal",
   },
 ];
