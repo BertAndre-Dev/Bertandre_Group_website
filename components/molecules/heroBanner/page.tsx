@@ -320,7 +320,7 @@ const SLIDES = [
   {
     id: "consulting",
     label: "Consulting",
-    src: "/assets/sliders/consulting.svg",
+    src: "/assets/Picture1.png",
     alt: "Consulting Services",
     description:
       "\u201cClarity drives growth. We combine strategy, financial insight, and technology to help businesses make informed decisions, navigate complexity, and scale with confidence.\u201d",
