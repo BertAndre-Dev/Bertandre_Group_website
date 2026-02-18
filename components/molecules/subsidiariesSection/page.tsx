@@ -25,7 +25,7 @@ function SubsidiaryCard({
 
   if (isImageRight) {
     return (
-      <article className="group bg-white rounded-[15px] md:rounded-[30px] shadow-sm border border-gray-100/80 hover:shadow-md transition-shadow overflow-hidden relative">
+      <article className="bg-white rounded-[15px] md:rounded-[30px] shadow-sm border border-gray-100/80 overflow-hidden relative">
         <div className="flex flex-col md:flex-row md:items-center">
           {/* Text - Left */}
           <div className="px-5 md:px-6 py-5 md:py-6 md:w-1/2 order-2 md:order-1">
@@ -61,55 +61,15 @@ function SubsidiaryCard({
             </div>
           </div>
         </div>
-
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            fill
-            className="object-cover"
-            loading="lazy"
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/20" />
-
-          <div className="absolute bottom-0 left-0 right-0 px-5 sm:px-6 pb-5">
-            <h3 className="text-base md:text-xl font-semibold text-white mb-3">
-              {title}
-            </h3>
-            <Link
-              href={linkHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="inline-flex items-center gap-1 cursor-pointer text-white font-medium text-[14px] md:text-[16px] hover:underline"
-            >
-              Learn more <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </div>
       </article>
     );
   }
 
   // Normal vertical layout
   return (
-    <article className="group bg-white rounded-[15px] md:rounded-[30px] shadow-sm border border-gray-100/80 hover:shadow-md transition-shadow overflow-hidden relative flex flex-col">
-      <div className="relative flex-1 overflow-hidden">
-        <div className="p-5 sm:p-6">
-          <div className="relative w-full aspect-16/10 overflow-hidden rounded-lg border-2">
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              fill
-              className="object-cover"
-              loading="lazy"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
-        </div>
-
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+    <article className="bg-white rounded-[15px] md:rounded-[30px] shadow-sm border border-gray-100/80 overflow-hidden relative flex flex-col">
+      <div className="p-5 sm:p-6">
+        <div className="relative w-full aspect-16/10 overflow-hidden rounded-lg border-2">
           <Image
             src={imageSrc}
             alt={imageAlt}
@@ -118,22 +78,15 @@ function SubsidiaryCard({
             loading="lazy"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/20" />
-        </div>
-
-        <div className="absolute bottom-0 left-0 right-0 z-10 px-5 sm:px-6 pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <h3 className="text-base md:text-xl font-semibold text-white">
-            {title}
-          </h3>
         </div>
       </div>
 
-      <div className="px-5 md:px-6 pb-5 md:pb-6 mt-2 md:mt-0 bg-white relative z-20">
-        <h3 className="text-base md:text-xl font-semibold text-[#1560BD] mb-2 overflow-hidden">
+      <div className="px-5 md:px-6 pb-5 md:pb-6 mt-2 md:mt-0 bg-white">
+        <h3 className="text-base md:text-xl font-semibold text-[#1560BD] mb-2">
           {title}
         </h3>
 
-        <p className="text-sm sm:text-base leading-relaxed text-[#4C4C4C] mb-4 overflow-hidden">
+        <p className="text-sm sm:text-base leading-relaxed text-[#4C4C4C] mb-4">
           {description}
         </p>
 
@@ -141,8 +94,7 @@ function SubsidiaryCard({
           href={linkHref}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
-          className="inline-flex items-center gap-1 cursor-pointer text-[#1560BD] font-medium text-[14px] md:text-[16px] hover:underline"
+          className="inline-flex items-center gap-1 text-[#1560BD] font-medium text-[14px] md:text-[16px] hover:underline"
         >
           Learn more
           <span aria-hidden="true"> →</span>
