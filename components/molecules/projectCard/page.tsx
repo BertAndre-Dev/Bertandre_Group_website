@@ -21,8 +21,8 @@ export default function ProjectCard({
   return (
     <article className="w-full max-w-[1320px] mx-auto border border-[#D0DFF2] sm:border-0 rounded-2xl sm:rounded-none overflow-hidden bg-white shadow-sm md:shadow-none">
       {/* Image Section */}
-      <div className="p-4 sm:p-6">
-        <div className="relative w-full rounded-[15px] md:rounded-[30px] overflow-hidden min-h-[250px] md:aspect-[33/10] sm:border sm:border-[#D0DFF2]">
+      <div className="p-4">
+        <div className="relative w-full rounded-[15px] md:rounded-[30px] overflow-hidden min-h-[250px] md:aspect-33/10 sm:border sm:border-[#D0DFF2]">
           {/* Mobile Image */}
           <Image
             src={imageSrcMobile}
@@ -38,7 +38,7 @@ export default function ProjectCard({
             src={imageSrc}
             alt={imageAlt}
             fill
-            className="object-contain hidden md:block"
+            className="object-contain px-6 hidden md:block"
             sizes="(max-width: 1024px) 90vw, 1320px"
             priority
           />

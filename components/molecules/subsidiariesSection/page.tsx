@@ -1,13 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import Pill from "@/components/atom/pill/page";
-
-// Smoother, consistent motion config
-const transition = { type: "tween" as const, duration: 0.35, ease: "easeOut" as const };
-const overlayTransition = { type: "tween" as const, duration: 0.4, ease: "easeInOut" as const };
 
 export interface SubsidiaryCardProps {
   readonly imageSrc: string;
@@ -26,23 +21,12 @@ function SubsidiaryCard({
   linkHref,
   layout = "normal",
 }: SubsidiaryCardProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
   const isImageRight = layout === "image-right";
 
   if (isImageRight) {
     return (
-      <motion.article
-        className="bg-white rounded-[15px] md:rounded-[30px] shadow-sm border border-gray-100/80 hover:shadow-md transition-shadow overflow-hidden relative"
-        onHoverStart={() => setIsExpanded(true)}
-        onHoverEnd={() => setIsExpanded(false)}
-        onClick={() => setIsExpanded(!isExpanded)}
-      >
-        {/* Default state — fades out on hover */}
-        <motion.div
-          className="flex flex-col md:flex-row md:items-center"
-          animate={{ opacity: isExpanded ? 0 : 1 }}
-          transition={transition}
-        >
+      <article className="group bg-white rounded-[15px] md:rounded-[30px] shadow-sm border border-gray-100/80 hover:shadow-md transition-shadow overflow-hidden relative">
+        <div className="flex flex-col md:flex-row md:items-center">
           {/* Text - Left */}
           <div className="px-5 md:px-6 py-5 md:py-6 md:w-1/2 order-2 md:order-1">
             <h3 className="text-base md:text-xl font-semibold text-[#1560BD] mb-2">
@@ -71,15 +55,9 @@ function SubsidiaryCard({
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Hover overlay — full-card image with title + Learn more at bottom */}
-        <motion.div
-          className="absolute inset-0"
-          initial={false}
-          animate={{ opacity: isExpanded ? 1 : 0 }}
-          transition={overlayTransition}
-        >
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <Image
             src={imageSrc}
             alt={imageAlt}
@@ -88,9 +66,8 @@ function SubsidiaryCard({
             loading="lazy"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/20" />
 
-          {/* Title + Learn more live INSIDE the overlay — no z-index battles */}
           <div className="absolute bottom-0 left-0 right-0 px-5 sm:px-6 pb-5">
             <h3 className="text-base md:text-xl font-semibold text-white mb-3">
               {title}
@@ -103,26 +80,16 @@ function SubsidiaryCard({
               Learn more <span aria-hidden="true">→</span>
             </Link>
           </div>
-        </motion.div>
-      </motion.article>
+        </div>
+      </article>
     );
   }
 
   // Normal vertical layout
   return (
-    <motion.article
-      className="bg-white rounded-[15px] md:rounded-[30px] shadow-sm border border-gray-100/80 hover:shadow-md transition-shadow overflow-hidden relative flex flex-col"
-      onHoverStart={() => setIsExpanded(true)}
-      onHoverEnd={() => setIsExpanded(false)}
-      onClick={() => setIsExpanded(!isExpanded)}
-    >
+    <article className="group bg-white rounded-[15px] md:rounded-[30px] shadow-sm border border-gray-100/80 hover:shadow-md transition-shadow overflow-hidden relative flex flex-col">
       <div className="relative flex-1 overflow-hidden">
-        <motion.div
-          className="p-5 sm:p-6"
-          initial={false}
-          animate={{ opacity: isExpanded ? 0 : 1 }}
-          transition={transition}
-        >
+        <div className="p-5 sm:p-6">
           <div className="relative w-full aspect-16/10 overflow-hidden rounded-lg border-2">
             <Image
               src={imageSrc}
@@ -133,14 +100,9 @@ function SubsidiaryCard({
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="absolute inset-0"
-          initial={false}
-          animate={{ opacity: isExpanded ? 1 : 0 }}
-          transition={overlayTransition}
-        >
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <Image
             src={imageSrc}
             alt={imageAlt}
@@ -149,43 +111,24 @@ function SubsidiaryCard({
             loading="lazy"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
-        </motion.div>
+          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/20" />
+        </div>
 
-        <motion.div
-          className="absolute bottom-0 left-0 right-0 z-10 px-5 sm:px-6 pb-4"
-          initial={false}
-          animate={{ opacity: isExpanded ? 1 : 0 }}
-          transition={{ ...transition, delay: isExpanded ? 0.08 : 0 }}
-        >
+        <div className="absolute bottom-0 left-0 right-0 z-10 px-5 sm:px-6 pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <h3 className="text-base md:text-xl font-semibold text-white">
             {title}
           </h3>
-        </motion.div>
+        </div>
       </div>
 
       <div className="px-5 md:px-6 pb-5 md:pb-6 mt-2 md:mt-0 bg-white relative z-20">
-        <motion.h3
-          className="text-base md:text-xl font-semibold text-[#1560BD] mb-2 overflow-hidden"
-          initial={false}
-          animate={{
-            opacity: isExpanded ? 0 : 1,
-          }}
-          transition={transition}
-        >
+        <h3 className="text-base md:text-xl font-semibold text-[#1560BD] mb-2 overflow-hidden">
           {title}
-        </motion.h3>
+        </h3>
 
-        <motion.p
-          className="text-sm sm:text-base leading-relaxed text-[#4C4C4C] mb-4 overflow-hidden"
-          initial={false}
-          animate={{
-            opacity: isExpanded ? 0 : 1,
-          }}
-          transition={transition}
-        >
+        <p className="text-sm sm:text-base leading-relaxed text-[#4C4C4C] mb-4 overflow-hidden">
           {description}
-        </motion.p>
+        </p>
 
         <Link
           href={linkHref}
@@ -196,7 +139,7 @@ function SubsidiaryCard({
           <span aria-hidden="true"> →</span>
         </Link>
       </div>
-    </motion.article>
+    </article>
   );
 }
 
