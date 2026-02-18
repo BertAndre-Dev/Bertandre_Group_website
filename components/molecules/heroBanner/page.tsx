@@ -254,15 +254,13 @@ function SlideContent({
   readonly index: number;
 }) {
   const [imageLoaded, setImageLoaded] = useState(false);
-  // const imgRef = useRef<HTMLImageElement | null>(null);
 
-  // Handle cases where the image is already cached and onLoad never fires
-  // const handleRef = (el: HTMLImageElement | null) => {
-  //   imgRef.current = el;
-  //   if (el?.complete && el.naturalWidth > 0) {
-  //     setImageLoaded(true);
-  //   }
-  // };
+  // iOS Safari: onLoad often doesn't fire for SVG/cached images (WebKit bug). A fallback
+  // timeout ensures we show the image instead of leaving a white or dark block.
+  React.useEffect(() => {
+    const fallback = setTimeout(() => setImageLoaded(true), 800);
+    return () => clearTimeout(fallback);
+  }, [slide.src]);
 
   return (
     <div className="relative w-full h-full">
@@ -272,30 +270,25 @@ function SlideContent({
       )}
 
       <Image
-        // ref={handleRef}
         fill
         src={slide.src}
         alt={slide.alt}
+        unoptimized
         className="object-cover"
         style={{
           opacity: imageLoaded ? 1 : 0,
-          // Avoid flash of invisible content on slow connections
           willChange: "opacity",
         }}
         priority={index === 0}
         loading={index === 0 ? "eager" : "lazy"}
         sizes="(max-width: 1024px) 100vw, 1720px"
         onLoad={(e) => {
-          // e.currentTarget is always available cross-browser
           const img = e.currentTarget;
           if (img.complete && img.naturalWidth > 0) {
             setImageLoaded(true);
           }
         }}
-        onError={() => {
-          // Still show the slot even if image fails
-          setImageLoaded(true);
-        }}
+        onError={() => setImageLoaded(true)}
       />
 
       {imageLoaded && (
