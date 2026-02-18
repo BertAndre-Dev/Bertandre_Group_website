@@ -254,15 +254,15 @@ function SlideContent({
   readonly index: number;
 }) {
   const [imageLoaded, setImageLoaded] = useState(false);
-  const imgRef = useRef<HTMLImageElement | null>(null);
+  // const imgRef = useRef<HTMLImageElement | null>(null);
 
   // Handle cases where the image is already cached and onLoad never fires
-  const handleRef = (el: HTMLImageElement | null) => {
-    imgRef.current = el;
-    if (el?.complete && el.naturalWidth > 0) {
-      setImageLoaded(true);
-    }
-  };
+  // const handleRef = (el: HTMLImageElement | null) => {
+  //   imgRef.current = el;
+  //   if (el?.complete && el.naturalWidth > 0) {
+  //     setImageLoaded(true);
+  //   }
+  // };
 
   return (
     <div className="relative w-full h-full">
@@ -272,7 +272,7 @@ function SlideContent({
       )}
 
       <Image
-        ref={handleRef}
+        // ref={handleRef}
         fill
         src={slide.src}
         alt={slide.alt}

@@ -48,7 +48,7 @@ function SubsidiaryCard({
           {/* Image - Right */}
           <div className="relative md:w-1/2 order-1 md:order-2">
             <div className="p-5 sm:p-6">
-              <div className="relative w-full [aspect-16/10] md:aspect-4/3 overflow-hidden rounded-lg">
+              <div className="relative w-full aspect-16/10 md:aspect-4/3 overflow-hidden rounded-lg">
                 <Image
                   src={imageSrc}
                   alt={imageAlt}
@@ -69,7 +69,7 @@ function SubsidiaryCard({
   return (
     <article className="bg-white rounded-[15px] md:rounded-[30px] shadow-sm border border-gray-100/80 overflow-hidden relative flex flex-col">
       <div className="p-5 sm:p-6">
-        <div className="relative w-full [aspect-16/10 overflow-hidden rounded-lg border-2">
+        <div className="relative w-full aspect-16/10 overflow-hidden rounded-lg border-2">
           <Image
             src={imageSrc}
             alt={imageAlt}
@@ -106,7 +106,7 @@ function SubsidiaryCard({
 
 const SUBSIDIARIES: SubsidiaryCardProps[] = [
   {
-    imageSrc: "/assets/Picture1.png",
+    imageSrc: "/assets/consulting.svg",
     imageAlt: "BertAndre Consulting – strategy and advisory",
     title: "BertAndre Consulting",
     description:
