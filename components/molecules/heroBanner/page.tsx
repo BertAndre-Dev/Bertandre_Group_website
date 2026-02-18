@@ -235,7 +235,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 
 import "swiper/css";
-import Image from "next/image";
 
 interface SlideData {
   id: string;
@@ -253,45 +252,28 @@ function SlideContent({
   readonly slide: SlideData;
   readonly index: number;
 }) {
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-  // iOS Safari: onLoad often doesn't fire for SVG/cached images (WebKit bug). A fallback
-  // timeout ensures we show the image instead of leaving a white or dark block.
+  // Don't rely on onLoad — iOS Safari often never fires it for SVG/cached images.
+  // Show overlay after a short delay so the image is always visible when the browser paints it.
+  const [showOverlay, setShowOverlay] = useState(false);
   React.useEffect(() => {
-    const fallback = setTimeout(() => setImageLoaded(true), 800);
-    return () => clearTimeout(fallback);
+    const t = setTimeout(() => setShowOverlay(true), 350);
+    return () => clearTimeout(t);
   }, [slide.src]);
 
   return (
-    <div className="relative w-full h-full">
-      {/* Skeleton shown while image loads */}
-      {!imageLoaded && (
-        <div className="absolute inset-0 bg-gray-200 animate-pulse" aria-hidden />
-      )}
-
-      <Image
-        fill
+    <div className="relative h-full min-h-[200px] w-full">
+      {/* Native img for iOS Safari compatibility (next/image + onLoad unreliable there) */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
         src={slide.src}
         alt={slide.alt}
-        unoptimized
-        className="object-cover"
-        style={{
-          opacity: imageLoaded ? 1 : 0,
-          willChange: "opacity",
-        }}
-        priority={index === 0}
+        className="absolute inset-0 h-full w-full object-cover"
         loading={index === 0 ? "eager" : "lazy"}
-        sizes="(max-width: 1024px) 100vw, 1720px"
-        onLoad={(e) => {
-          const img = e.currentTarget;
-          if (img.complete && img.naturalWidth > 0) {
-            setImageLoaded(true);
-          }
-        }}
-        onError={() => setImageLoaded(true)}
+        fetchPriority={index === 0 ? "high" : "low"}
+        decoding="async"
       />
 
-      {imageLoaded && (
+      {showOverlay && (
         <div
           className="absolute inset-0 flex items-end justify-center p-4 sm:p-6 lg:p-8 pb-8 sm:pb-10 lg:pb-12"
           style={{
