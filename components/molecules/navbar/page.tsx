@@ -35,7 +35,7 @@ export default function Navbar() {
       />
 
       {/* Main Navbar */}
-      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-0">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-20">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
