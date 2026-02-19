@@ -12,7 +12,7 @@ export default function TermsPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-14 max-w-4xl">
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1320px] py-8 sm:py-10 lg:py-14">
         <h1 className="text-[#171717] text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">
           Terms and Conditions
         </h1>
