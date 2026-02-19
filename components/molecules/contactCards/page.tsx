@@ -58,7 +58,7 @@ function ContactCard({
       </div>
 
       <div>
-        <h3 className="text-[#000] text-base md:text-[20px] font-bold mb-2">
+        <h3 className="text-[#000] text-base md:text-[20px] xl:text-[24px] font-bold mb-2">
           {card.title}
         </h3>
 

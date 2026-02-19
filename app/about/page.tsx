@@ -69,7 +69,7 @@ export default function AboutPage() {
               <div className="relative w-full rounded-[10px] md:rounded-[20px] overflow-hidden min-h-[250px] md:min-h-0 md:aspect-[33/10]">
                 {/* Mobile Image */}
                 <Image
-                  src="/assets/about-us/about-us-mobile.svg"
+                  src="/assets/about-us/about-us.png"
                   alt="BertAndre Group"
                   fill
                   className="object-cover md:hidden"
@@ -79,7 +79,7 @@ export default function AboutPage() {
 
                 {/* Desktop Image */}
                 <Image
-                  src="/assets/about-us/about-us.svg"
+                  src="/assets/about-us/about-us.png"
                   alt="BertAndre Group"
                   fill
                   className="object-contain hidden md:block"
@@ -118,7 +118,7 @@ export default function AboutPage() {
               <div className="relative w-full rounded-[10px] md:rounded-[20px] overflow-hidden min-h-[250px] md:min-h-0 md:aspect-[33/10]">
                 {/* Mobile Image */}
                 <Image
-                  src="/assets/about-us/vision-mobile.svg"
+                  src="/assets/about-us/vision-mobile.png"
                   alt="BertAndre Group"
                   fill
                   className="object-cover md:hidden"
@@ -128,7 +128,7 @@ export default function AboutPage() {
 
                 {/* Desktop Image */}
                 <Image
-                  src="/assets/about-us/vision.svg"
+                  src="/assets/about-us/vision.png"
                   alt="BertAndre Group"
                   fill
                   className="object-contain hidden md:block"

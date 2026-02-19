@@ -26,13 +26,13 @@ export default function Navbar() {
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       {/* 🔹 Navbar Top with Props */}
-      <NavbarTop
-        phone="+234 123 456 7890"
+      {/* <NavbarTop
+        phone="09138667927"
         email="info@bertandregroup.com"
         address="20 Audu Ekphega street Lekki Phase 1"
         instagramUrl="https://www.instagram.com/bertandregroup?igsh=MWIwZzlnZHRzb2gweQ=="
         facebookUrl="https://www.facebook.com/share/18D87Hinyn/?mibextid=wwXIfr"
-      />
+      /> */}
 
       {/* Main Navbar */}
       <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-20">
@@ -106,7 +106,7 @@ export default function Navbar() {
         <div className="fixed inset-0 z-999 bg-white lg:hidden overflow-y-auto">
           {/* NavbarTop in Mobile Menu */}
           <NavbarTop
-            phone="+234 123 456 7890"
+            phone="+234 9138667927"
             email="info@bertandregroup.com"
             address="20 Audu Ekphega street Lekki Phase 1"
             instagramUrl="https://www.instagram.com/bertandregroup?igsh=MWIwZzlnZHRzb2gweQ=="

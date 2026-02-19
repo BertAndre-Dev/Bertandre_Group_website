@@ -19,7 +19,7 @@ const SUBSIDIARIES = [
       "BertAndre Consulting provides strategic, financial, real estate, and technology advisory services to corporates, SMEs, startups, and institutions. The venture supports market entry, operational improvement, financial structuring, digital transformation, and real estate advisory. It also serves as the technology and product development backbone for the Group.",
     linkLabel: "www.bertandreconsulting.com",
     linkHref: "https://www.bertandreconsulting.com/",
-    imageSrc: "/assets/subsidiaries/consulting.svg",
+    imageSrc: "/assets/sliders/consulting.png",
     imageAlt: "BertAndre Consulting – strategy and advisory",
   },
   {
@@ -28,7 +28,7 @@ const SUBSIDIARIES = [
       "Primquisite Real Estate delivers property development, estate operations, and technology-enabled real estate solutions. The venture focuses on responsible development, asset optimization, and integrated estate solutions that combine real estate, energy, and technology.",
     linkLabel: "www.primquisiterealestate.com",
     linkHref: "https://www.linkedin.com/company/primquisite-real-estae/",
-    imageSrc: "/assets/subsidiaries/prim.svg",
+    imageSrc: "/assets/sliders/prim.png",
     imageAlt: "Primquisite Real Estate – property development",
   },
   {
@@ -37,7 +37,7 @@ const SUBSIDIARIES = [
       "SAAIR Energy delivers integrated energy solutions across metering, monitoring, and energy infrastructure. The venture supports estates, enterprises, and institutions with reliable energy access while positioning for expansion into renewable energy, energy-as-a-service, and infrastructure-backed solutions.",
     linkLabel: "www.saairenergy.com",
     linkHref: "https://www.saairenergy.com",
-    imageSrc: "/assets/subsidiaries/saair.svg",
+    imageSrc: "/assets/sliders/saair.png",
     imageAlt: "SAAIR Energy – energy solutions",
   },
   {
@@ -46,7 +46,7 @@ const SUBSIDIARIES = [
       "Autodate Smart Fleet provides end-to-end fleet administration, compliance management, and mobility solutions for corporate and institutional clients. The platform simplifies vehicle registration, licensing, insurance management, and compliance while evolving toward smart mobility and EV-enabled solutions.",
     linkLabel: "www.autodate.com",
     linkHref: "https://www.linkedin.com/company/autodate-smart-fleet/",
-    imageSrc: "/assets/subsidiaries/autodate.svg",
+    imageSrc: "/assets/sliders/autodate.png",
     imageAlt: "Autodate Smart Fleet – fleet management",
   },
 ];

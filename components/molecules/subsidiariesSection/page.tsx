@@ -48,12 +48,12 @@ function SubsidiaryCard({
           {/* Image - Right */}
           <div className="relative md:w-1/2 order-1 md:order-2">
             <div className="p-5 sm:p-6">
-              <div className="relative w-full aspect-16/10 md:aspect-4/3 overflow-hidden rounded-lg">
+              <div className="relative w-full min-h-[150px] overflow-hidden rounded-lg">
                 <Image
                   src={imageSrc}
                   alt={imageAlt}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   loading="lazy"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
@@ -69,12 +69,12 @@ function SubsidiaryCard({
   return (
     <article className="bg-white rounded-[15px] md:rounded-[30px] shadow-sm border border-gray-100/80 overflow-hidden relative flex flex-col">
       <div className="p-5 sm:p-6">
-        <div className="relative w-full aspect-16/10 overflow-hidden rounded-lg border-2">
+        <div className="relative w-full min-h-[150px] overflow-hidden rounded-lg">
           <Image
             src={imageSrc}
             alt={imageAlt}
             fill
-            className="object-cover"
+            className="object-contain"
             loading="lazy"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
@@ -106,7 +106,7 @@ function SubsidiaryCard({
 
 const SUBSIDIARIES: SubsidiaryCardProps[] = [
   {
-    imageSrc: "/assets/consulting.svg",
+    imageSrc: "/assets/sliders/consulting.png",
     imageAlt: "BertAndre Consulting – strategy and advisory",
     title: "BertAndre Consulting",
     description:
@@ -158,7 +158,7 @@ export default function SubsidiariesSection() {
 
         <div className="flex flex-col lg:flex-row gap-6 pb-10">
           {/* First Column */}
-          <div className="flex flex-col gap-6 lg:gap-8">
+          <div className="flex flex-col gap-6 lg:gap-12">
             {SUBSIDIARIES.slice(0, 2).map((sub) => (
               <SubsidiaryCard
                 key={sub.title}

@@ -25,7 +25,7 @@ export default function ContactForm() {
 
   return (
     <div className="bg-[#1560BD] rounded-[30px] p-6 sm:p-8 lg:p-10">
-      <h2 className="text-white text-[20px] md:text-[24px] font-extrabold mb-3">
+      <h2 className="text-white text-[20px] md:text-[24px] xl:text-[28px] font-extrabold mb-3">
         Make a Consultation
       </h2>
       <p className="text-[#F7F7F7] text-[14px] md:text-base font-medium mb-6">

@@ -7,11 +7,11 @@ import Image from "next/image";
 const QUICK_LINKS = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Business", href: "/business" },
+  { label: "Business", href: "/subsidiaries" },
   { label: "Contact Us", href: "/contact" },
 ];
 
-const SERVICES = [{ label: "Businesses", href: "/business" }];
+const SERVICES = [{ label: "Businesses", href: "/subsidiaries" }];
 
 const INFORMATION = [
   { label: "Privacy Policy", href: "/privacy" },
@@ -153,10 +153,10 @@ export default function Footer() {
                 info@bertandregroup.com
               </a>
               <a
-                href="tel:+2343722742444"
+                href="tel:09138667927"
                 className="text-white/90 text-sm hover:text-white transition-colors block mb-3"
               >
-                +234 372 274 2444
+                09138667927
               </a>
               <SocialIcons />
             </div>

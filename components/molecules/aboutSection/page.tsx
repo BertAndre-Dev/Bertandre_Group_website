@@ -38,7 +38,7 @@ function InfoCard({
       <h3 className="text-base md:text-lg font-semibold text-[#1560BD] flex items-center gap-2 mb-2">
         {title}
       </h3>
-      <p className="text-[#4C4C4C] text-[14px] md:text-[20px] leading-relaxed">{text}</p>
+      <p className="text-[#4C4C4C] text-[14px] md:text-[20px] xl:text-[24px] leading-relaxed">{text}</p>
     </div>
   );
 }
@@ -53,7 +53,7 @@ export default function AboutSection() {
             <Pill className="mb-6" active>
               {ABOUT_COPY.pill}
             </Pill>
-            <p className="text-[#4C4C4C] text-[14px] md:text-[20px] font-normal leading-8 mb-6">
+            <p className="text-[#4C4C4C] text-[14px] md:text-[20px] xl:text-[24px] font-normal leading-8 mb-6">
               {ABOUT_COPY.left}
             </p>
             <Link href={ABOUT_COPY.learnMoreHref}>

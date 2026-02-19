@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Albert_Sans } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,12 +12,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const albertSans = Albert_Sans({
+  variable: "--font-albert-sans",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   icons: {
     icon: "/assets/Logo.svg",
   },
   title: "BertAndre Group",
-  description: "BertAndre Group is a group of companies that provides a range of services to the public",
+  description:
+    "BertAndre Group is a group of companies that provides a range of services to the public",
 };
 
 export default function RootLayout({
@@ -28,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${albertSans.variable} antialiased`}
       >
         {children}
       </body>

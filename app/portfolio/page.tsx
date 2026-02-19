@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 
 const PORTFOLIO_ITEMS = [
   {
-    imageSrc: "/assets/portfolio/saair.svg",
-    imageSrcMobile: "/assets/portfolio/saair.svg",
+    imageSrc: "/assets/portfolio/saair.png",
+    imageSrcMobile: "/assets/portfolio/saair.png",
     imageAlt: "Smart metering and energy technology",
     category: "SMART METER",
     title: "SAAIR",
@@ -39,7 +39,6 @@ export default function PortfolioPage() {
                   key={item.title}
                   imageSrc={item.imageSrc}
                   imageAlt={item.imageAlt}
-                  imageSrcMobile={item.imageSrcMobile}
                   category={item.category}
                   title={item.title}
                   description={item.description}

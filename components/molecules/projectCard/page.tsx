@@ -4,7 +4,6 @@ import Image from "next/image";
 export interface ProjectCardProps {
   readonly imageSrc: string;
   readonly imageAlt: string;
-  readonly imageSrcMobile: string;
   readonly category: string;
   readonly title: string;
   readonly description: string;
@@ -13,7 +12,6 @@ export interface ProjectCardProps {
 export default function ProjectCard({
   imageSrc,
   imageAlt,
-  imageSrcMobile,
   category,
   title,
   description,
@@ -25,7 +23,7 @@ export default function ProjectCard({
         <div className="relative w-full rounded-[15px] md:rounded-[30px] overflow-hidden min-h-[250px] md:aspect-33/10 sm:border sm:border-[#D0DFF2]">
           {/* Mobile Image */}
           <Image
-            src={imageSrcMobile}
+            src={imageSrc}
             alt={imageAlt}
             fill
             className="object-cover md:hidden"
