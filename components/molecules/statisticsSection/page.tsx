@@ -11,8 +11,8 @@ interface StatCardProps {
 
 function StatCard({ icon, value, label }: StatCardProps) {
   return (
-    <div className="grid grid-cols-2">
-      <div className="shrink-0 flex items-center justify-center text-[#184b9e]">
+    <div className="flex items-start justify-between gap-4">
+      <div className="flex items-center justify-center w-[30px] h-[30px] shrink-0">
         {icon}
       </div>
 
@@ -28,7 +28,15 @@ function StatCard({ icon, value, label }: StatCardProps) {
 
 const STATS = [
   {
-    icon: <Image src="/assets/team.svg" alt="team" width={48} height={48} />,
+    icon: (
+      <Image
+        src="/assets/team.svg"
+        alt="team"
+        width={30}
+        height={30}
+        className="w-full h-full object-contain"
+      />
+    ),
     value: "12+",
     label: "Team Members",
   },
@@ -37,8 +45,9 @@ const STATS = [
       <Image
         src="/assets/handshake.svg"
         alt="handshake"
-        width={48}
-        height={48}
+        width={30}
+        height={30}
+        className="w-full h-full object-contain"
       />
     ),
     value: "20+",
@@ -46,7 +55,13 @@ const STATS = [
   },
   {
     icon: (
-      <Image src="/assets/setting.svg" alt="setting" width={48} height={48} />
+      <Image
+        src="/assets/setting.svg"
+        alt="setting"
+        width={30}
+        height={30}
+        className="w-full h-full object-contain"
+      />
     ),
     value: "10+",
     label: "Innovative Solutions",
@@ -55,9 +70,9 @@ const STATS = [
 
 export default function StatisticsSection() {
   return (
-    <section className="bg-[#F7F7F7]">
+    <section className="bg-[#FFF6EF]">
       <div className="container mx-auto my-12 md:my-20 px-6 md:px-8 lg:px-10 xl:px-0 py-12 md:py-20">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-12 md:gap-8">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-12 md:gap-8">
           {STATS.map((stat) => (
             <StatCard
               key={stat.label}

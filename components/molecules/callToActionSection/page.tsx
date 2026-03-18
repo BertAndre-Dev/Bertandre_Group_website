@@ -9,7 +9,7 @@ export default function CallToActionSection() {
   return (
     <section className="bg-white pb-12 pt-18 lg:pb-16 lg:pt-20">
       <div className="container mx-auto">
-        <div className="flex flex-col items-center text-center max-w-2xl mx-auto gap-6">
+        <div className="flex flex-col items-center text-center xl:max-w-2xl mx-auto gap-8">
           <Pill className="px-6 py-2" active>
             {" "}
             Reach out to us
@@ -23,10 +23,10 @@ export default function CallToActionSection() {
           </p>
           <Link href="/contact">
             <Button
-              className="bg-[#1560BD] hover:bg-[#124ea0] text-white rounded-full px-14 py-3 text-base font-medium"
-              bg="bg-[#1560BD]"
+              className="bg-[#FA8128] hover:bg-[#E6731E] text-white rounded-full px-10 py-4 text-base font-semibold"
+              bg="bg-[#FA8128]"
               text="text-white"
-              hover="hover:bg-[#124ea0]"
+              hover="hover:bg-[#E6731E]"
               rounded="rounded-full"
             >
               Contact Us

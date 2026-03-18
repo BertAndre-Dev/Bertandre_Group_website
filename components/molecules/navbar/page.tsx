@@ -24,32 +24,24 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
-      {/* 🔹 Navbar Top with Props */}
-      <NavbarTop
-        phone="+234 123 456 7890"
-        email="info@bertandregroup.com"
-        address="20 Audu Ekphega street Lekki Phase 1"
-        instagramUrl="https://instagram.com/bertandregroup"
-        facebookUrl="https://facebook.com/bertandregroup"
-      />
+    <nav className="bg-[#1A1A1A] shadow-md sticky top-0 z-50 py-4">
 
       {/* Main Navbar */}
-      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-0">
+      <div className="container  mx-auto px-6 md:px-8 lg:px-10 xl:px-0">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/assets/Logo.png"
+              src="/assets/Logo.svg"
               alt="Logo"
-              width={100}
-              height={100}
+              width={150}
+              height={150}
               priority
             />
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-x-16 xl:gap-x-20">
+          <div className="hidden lg:flex items-center gap-x-12 xl:gap-x-20">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
 
@@ -57,10 +49,10 @@ export default function Navbar() {
                 return (
                   <Link key={link.href} href={link.href}>
                     <Button
-                      bg="bg-[#1560BD]"
-                      hover="hover:bg-[#124ea0]"
-                      text="text-white"
-                      padding="px-8 py-4"
+                      bg="bg-[#FA8128]"
+                      hover="hover:bg-[#E6731E]"
+                      text="text-[#F7F7F7]"
+                      padding="px-8 py-3"
                       rounded="rounded-full"
                     >
                       Contact Us
@@ -75,8 +67,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`text-base font-medium transition-colors ${
                     isActive
-                      ? "text-[#1560BD]"
-                      : "text-[#4C4C4C] hover:text-[#1560BD]"
+                      ? "text-[#FA8128]"
+                      : "text-[#F7F7F7] hover:text-[#FA8128]"
                   }`}
                 >
                   {link.label}
@@ -105,10 +97,10 @@ export default function Navbar() {
       {isMenuOpen && (
         // <div className="fixed inset-0 z-[999] bg-white md:hidden">
         <div className="fixed inset-0 z-999 bg-white lg:hidden">
-          <div className="flex items-center justify-between px-6 py-5 border-b">
+          <div className="flex items-center justify-between px-6 py-4 border-b">
             <Link href="/" onClick={() => setIsMenuOpen(false)}>
               <Image
-                src="/assets/Logo.png"
+                src="/assets/Logo.svg"
                 alt="Logo"
                 width={100}
                 height={100}
@@ -136,7 +128,7 @@ export default function Navbar() {
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
                   className={`text-xl font-medium ${
-                    pathname === link.href ? "text-[#1560BD]" : "text-[#4C4C4C]"
+                    pathname === link.href ? "text-[#FA8128]" : "text-[#111111]"
                   }`}
                 >
                   {link.label}
@@ -148,11 +140,11 @@ export default function Navbar() {
             <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
               <Button 
               // className="w-full bg-[#1560BD]  py-2 text-white text-lg rounded="rounded-full" "
-              bg="bg-[#1560BD]"
+              bg="bg-[#FA8128]"
               text="text-white"
               rounded="rounded-full"
               padding="px-12 py-4"
-              hover="hover:bg-[#124ea0]"
+              hover="hover:bg-[#E6731E]"
               >
                 Contact Us
               </Button>

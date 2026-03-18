@@ -32,7 +32,7 @@ function SubsidiaryCard({
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
-        <h3 className="text-base md:text-xl font-semibold text-[#1560BD] mb-2">
+        <h3 className="text-base md:text-xl font-semibold text-[#FA8128] mb-2">
           {title}
         </h3>
         <p className="text-[#4C4C4C] text-sm sm:text-base leading-relaxed mb-4">
@@ -40,7 +40,7 @@ function SubsidiaryCard({
         </p>
         <Link
           href={linkHref}
-          className="inline-flex items-center gap-1 text-[#1560BD] font-medium text-[14px] md:text-[16px] hover:underline"
+          className="inline-flex items-center gap-1 text-[#FA8128] font-medium text-[14px] md:text-[16px] hover:underline"
         >
           Learn more
           <span aria-hidden="true"> →</span>
@@ -88,11 +88,11 @@ const SUBSIDIARIES: SubsidiaryCardProps[] = [
 
 export default function SubsidiariesSection() {
   return (
-    <section className="bg-[#D0DFF2]">
+    <section className="bg-[#1A1A1A]">
       <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-0">
         <div className="flex justify-center mb-10 pt-6  lg:mb-12">
           <Pill
-            className="bg-white border border-[#1560BD] text-[#1560BD]"
+            className="border border-[#FA8128] px-10 text-[#1A1A1A]"
             active
           >
             Subsidiaries

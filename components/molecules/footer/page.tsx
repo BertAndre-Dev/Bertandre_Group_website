@@ -37,7 +37,7 @@ function FooterColumn({
           <li key={href}>
             <Link
               href={href}
-              className="text-[#F7F7F7] text-[14px] md:text-[18px] font-light md:font-normal hover:text-white transition-colors"
+              className="text-[#FFFFFF80] text-[14px] md:text-[18px] font-light md:font-normal hover:text-white transition-colors"
             >
               {label}
             </Link>
@@ -55,7 +55,7 @@ function SocialIcons() {
         href="https://instagram.com/bertandregroup"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:bg-white/20 transition-colors text-white"
+        className="flex items-center justify-center w-10 h-10 rounded-full bg-[#FA8128] hover:bg-[#E6731E] transition-colors text-white"
         aria-label="Instagram"
       >
         <Image
@@ -70,7 +70,7 @@ function SocialIcons() {
         href="https://youtube.com/bertandregroup"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:bg-white/20 transition-colors text-white"
+        className="flex items-center justify-center w-10 h-10 rounded-full bg-[#FA8128] hover:bg-[#E6731E] transition-colors text-white"
         aria-label="YouTube"
       >
         <Image
@@ -85,7 +85,7 @@ function SocialIcons() {
         href="https://facebook.com/bertandregroup"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:bg-white/20 transition-colors text-white"
+        className="flex items-center justify-center w-10 h-10 rounded-full bg-[#FA8128] hover:bg-[#E6731E] transition-colors text-white"
         aria-label="Facebook"
       >
         <Image
@@ -102,17 +102,17 @@ function SocialIcons() {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1560BD]">
-      <div 
-      className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-0 pt-12 pb-8 lg:pt-16 lg:pb-10"
+    <footer className="bg-[#1A1A1A]">
+      <div
+        className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-0 pt-12 pb-8 lg:pt-16 lg:pb-10"
 
-      // className="container mx-auto px-4 pt-12 pb-8 lg:pt-16 lg:pb-10"
+        // className="container mx-auto px-4 pt-12 pb-8 lg:pt-16 lg:pb-10"
       >
         <div>
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 pb-8">
             <Link href="/" className="inline-flex flex-col gap-1">
-              <div className="flex flex-col lg:flex-row items-start lg:items-center md:gap-3">
+              <div className="flex flex-col">
                 <Image
                   src="/assets/Logo2.svg"
                   // className="w-full h-full"
@@ -121,14 +121,9 @@ export default function Footer() {
                   height={150}
                 />
 
-                <div>
-                  <span className="text-white text-base md:text-[18px] lg:text-[32px] pt-2 md:pt-0 font-light block">
-                    BertAndre Group
-                  </span>
-                  <p className="text-white text-sm md:text-[16px] lg:text-[18px] font-light hidden sm:block">
-                    Purpose-driven ventures. Built to scale.
-                  </p>
-                </div>
+                <p className="text-white text-sm md:text-[16px] xl:text-[18px] font-light hidden sm:block">
+                  Purpose-driven ventures. Built to scale.
+                </p>
               </div>
             </Link>
           </div>
@@ -145,13 +140,13 @@ export default function Footer() {
               </h3>
               <a
                 href="mailto:support@bertandre.com"
-                className="text-white/90 text-sm hover:text-white transition-colors block mb-1"
+                className="text-[#FFFFFF80] text-sm hover:text-white transition-colors block mb-1"
               >
                 support@bertandre.com
               </a>
               <a
                 href="tel:+2343722742444"
-                className="text-white/90 text-sm hover:text-white transition-colors block mb-3"
+                className="text-[#FFFFFF80] text-sm hover:text-white transition-colors block mb-3"
               >
                 +234 372 274 2444
               </a>

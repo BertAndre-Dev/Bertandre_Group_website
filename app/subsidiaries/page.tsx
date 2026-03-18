@@ -59,7 +59,7 @@ export default function SubsidiariesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 lg:pb-20">
           <div className="max-w-[1320px] mx-auto">
             <Pill
-              className="bg-[#D0DFF280] border border-[#739FD7] text-[#1560BD] mb-6 sm:mb-8"
+              className=" mb-6 sm:mb-8"
               active
             >
               Subsidiaries

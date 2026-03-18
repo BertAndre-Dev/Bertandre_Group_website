@@ -34,8 +34,8 @@ function InfoCard({
   readonly showIcon?: boolean;
 }) {
   return (
-    <div className="mb-4 last:mb-0 border-b border-[#FA8128] pb-3">
-      <h3 className="text-base md:text-lg font-semibold text-[#1560BD] flex items-center gap-2 mb-2">
+    <div className="mb-4 last:mb-0 border-b border-[#FA8128] pb-4">
+      <h3 className="text-base md:text-lg font-semibold text-[#FA8128] flex items-center gap-2 mb-2">
         {title}
       </h3>
       <p className="text-[#4C4C4C] text-base leading-relaxed">{text}</p>
@@ -58,10 +58,10 @@ export default function AboutSection() {
             </p>
             <Link href={ABOUT_COPY.learnMoreHref}>
               <Button
-                className="bg-[#1560BD] hover:bg-[#133a7d] text-white rounded-full px-6 py-3 font-medium"
-                bg="bg-[#184b9e]"
+                className="bg-[#FA8128] hover:bg-[#E6731E] text-white rounded-full px-6 py-3 font-medium"
+                bg="bg-[#FA8128]"
                 text="text-white"
-                hover="hover:bg-[#133a7d]"
+                hover="hover:bg-[#E6731E]"
                 rounded="rounded-full"
               >
                 {ABOUT_COPY.learnMore}

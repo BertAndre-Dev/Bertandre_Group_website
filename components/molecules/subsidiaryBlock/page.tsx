@@ -22,9 +22,9 @@ export default function SubsidiaryBlock({
   imageAlt,
 }: SubsidiaryBlockProps) {
   return (
-    <article className="w-full max-w-[1320px] mx-auto border border-[#D0DFF2] md:border-none rounded-2xl md:rounded-none overflow-hidden bg-white shadow-sm md:shadow-none">
-      <div className="max-w-[1320px] rounded-3xl sm:border sm:border-[#D0DFF2] mx-auto">
-        <div className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden aspect-33/10 min-h-[150px] md:min-h-[320px] lg:min-h-[400px]">
+    <article className="w-full max-w-[1320px] mx-auto border border-[#FEE6D4] md:border-none rounded-2xl md:rounded-none overflow-hidden bg-white shadow-sm md:shadow-none">
+      <div className="max-w-[1320px] rounded-3xl sm:border sm:border-[#FEE6D4] mx-auto">
+        <div className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden aspect-33/10 min-h-[150px]">
           <Image
             src={imageSrc}
             alt={imageAlt}
@@ -34,7 +34,7 @@ export default function SubsidiaryBlock({
           />
         </div>
       </div>
-      <div className="p-6 sm:p-8 lg:p-10">
+      <div className="py-6">
         <h2 className="text-[#4C4C4C] text-[14px] md:text-[40px] lg:text-3xl font-semibold md:font-bold mb-4">
           {title}
         </h2>
@@ -45,7 +45,7 @@ export default function SubsidiaryBlock({
           href={linkHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-[#1560BD] font-medium text-[14px] md:text-[20px] hover:underline"
+          className="inline-flex items-center gap-1 text-[#FA8128] font-medium text-[14px] md:text-[20px] hover:underline"
         >
           {/* Mobile */}
           <span className="md:hidden">Learn more</span>

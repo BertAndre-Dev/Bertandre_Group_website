@@ -36,13 +36,13 @@ export default function HeroSection() {
               {HERO_COPY.description}
             </p>
           </div>
-          <div className="flex items-center justify-center flex-wrap flex-col md:flex-row gap-4">
+          <div className="flex items-center justify-start flex-wrap flex-col md:flex-row gap-4">
             <Link href={HERO_COPY.ctaPrimaryHref}>
               <Button
-                className="bg-[#1560BD] hover:bg-[#124ea0] text-white rounded-full px-6 py-3 sm:px-8 sm:py-3 text-[14px] md:text-base font-medium"
-                bg="bg-[#1560BD]"
+                className="bg-[#FA8128] hover:bg-[#E6731E] text-white rounded-full px-6 py-3 sm:px-8 sm:py-3 text-[14px] md:text-base font-medium"
+                bg="bg-[#FA8128]"
                 text="text-white"
-                hover="hover:bg-[#124ea0]"
+                hover="hover:bg-[#E6731E]"
                 rounded="rounded-full"
               >
                 {HERO_COPY.ctaPrimary}
@@ -50,9 +50,9 @@ export default function HeroSection() {
             </Link>
             <Link href={HERO_COPY.ctaSecondaryHref}>
               <Button
-                className="bg-white border-2 border-[#1560BD] text-[#1560BD] hover:bg-[#f0f8ff] rounded-full px-6 py-3 sm:px-8 sm:py-3 text-[14px] md:text-base font-medium"
+                className="bg-white border-2 border-[#1A1A1A] text-black hover:bg-[#f0f8ff] rounded-full px-6 py-3 sm:px-8 sm:py-3 text-[14px] md:text-base font-medium"
                 bg="bg-white"
-                text="text-[#1560BD]"
+                text="text-black"
                 hover="hover:bg-[#f0f8ff]"
                 rounded="rounded-full"
               >
