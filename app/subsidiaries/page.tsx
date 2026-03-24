@@ -56,16 +56,15 @@ export default function SubsidiariesPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
       <main>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 lg:pb-20">
-          <div className="max-w-[1320px] mx-auto">
+        <div className="mx-auto w-full max-w-7xl px-4 md:px-0 pt-20">
             <Pill
-              className=" mb-6 sm:mb-8"
+              className="mb-6 md:mb-8"
               active
             >
               Subsidiaries
             </Pill>
 
-            <div className="flex flex-col gap-20 md:gap-24">
+            <div className="flex flex-col gap-14">
               {SUBSIDIARIES.map((sub) => (
                 <SubsidiaryBlock
                   key={sub.title}
@@ -79,7 +78,6 @@ export default function SubsidiariesPage() {
               ))}
             </div>
           </div>
-        </div>
         <CallToActionSection />
       </main>
       <Footer />

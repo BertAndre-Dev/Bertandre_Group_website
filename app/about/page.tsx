@@ -63,8 +63,8 @@ export default function AboutPage() {
       <Navbar />
       <main>
         {/* Hero: Banner image */}
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-10 pb-6 sm:pb-8">
-          <div className="max-w-[1320px] border border-[#FEE6D4] rounded-3xl  mx-auto">
+        <section className="mx-auto w-full max-w-7xl px-4 md:px-0 pt-20">
+          <div className="border border-[#FEE6D4] rounded-3xl  mx-auto">
             <div className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden aspect-[33/10] min-h-[150px]">
               <Image
                 src="/assets/about-us/about-us.svg"
@@ -79,7 +79,7 @@ export default function AboutPage() {
         </section>
 
         {/* About Us pill + intro text */}
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8 pb-10 sm:pb-12 lg:pb-16">
+        <section className="mx-auto w-full max-w-7xl px-4 md:px-0">
           <div className="max-w-[1320px] mx-auto">
             <Pill className="px-8 mb-6 sm:mb-8 mt-12" active>
               {ABOUT_COPY.pill}
@@ -88,7 +88,7 @@ export default function AboutPage() {
               {ABOUT_COPY.paragraphs.map((text) => (
                 <p
                   key={text}
-                  className="text-[#4C4C4C] text-[14px] md:text-[20px] xl:text-[24px] font-normal leading-relaxed"
+                  className="text-[#4C4C4C] text-[14px] md:text-base xl:text-[18px] font-normal leading-relaxed"
                 >
                   {text}
                 </p>
@@ -98,11 +98,11 @@ export default function AboutPage() {
         </section>
 
         {/* Mission: Image + heading + numbered list */}
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-10 pb-6 sm:pb-8">
-          <div className="max-w-[1320px] border border-[#FEE6D4] rounded-3xl  mx-auto">
+        <section className="mx-auto w-full max-w-7xl py-2 px-4 md:px-8">
+          <div className=" border border-[#FEE6D4] rounded-3xl  mx-auto">
             <div className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden aspect-33/10 min-h-[150px]">
               <Image
-                src="/assets/about-us/about-us1.svg"
+                src="/assets/about-us/about-us2.svg"
                 alt="Our mission"
                 fill
                 className="object-contain p-6"
@@ -110,14 +110,14 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="pt-6">
-            <h2 className="text-[#FA8128] text-base md:text-[20px] xl:text-[24px] font-medium mb-4 md:mb-8">
+            <h2 className="text-[#FA8128] text-base md:text-[20px] font-medium mb-4 md:mb-8">
               Mission
             </h2>
             <ol className="list-decimal list-inside space-y-4 sm:space-y-5">
               {MISSION_ITEMS.map((item) => (
                 <li
                   key={item}
-                  className="text-[#4C4C4C] text-[14px] md:text-[20px] xl:text-[24px] font-normal leading-relaxed pl-1"
+                  className="text-[#4C4C4C] text-[14px] md:text-base xl:text-[18px] font-normal leading-relaxed pl-1"
                 >
                   {item}
                 </li>
@@ -126,17 +126,24 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Separator */}
+        <section className="mx-auto w-full max-w-7xl py-2 px-4 md:px-8">
+          <div className="mx-auto">
+            <hr className="border-t border-[#FA8128]" />
+          </div>
+        </section>
+
         {/* Vision */}
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8 pb-10 sm:pb-12">
-          <div className="max-w-[1320px] mx-auto">
-            <h2 className="text-[#1560BD] text-base md:text-[20px] xl:text-[24px] font-medium mb-4 md:mb-8">
+        <section className="mx-auto w-full max-w-7xl py-4 px-4 md:px-8">
+          <div className="mx-auto">
+            <h2 className="text-[#FA8128] text-base md:text-[20px] font-medium mb-4 md:mb-8">
               Vision
             </h2>
             <div className="space-y-4 sm:space-y-5">
               {VISION_PARAGRAPHS.map((text) => (
                 <p
                   key={text}
-                  className="text-[#4C4C4C] text-[14px] md:text-[20px] xl:text-[24px] font-normal leading-relaxed"
+                  className="text-[#4C4C4C] text-[14px] md:text-base xl:text-[18px] font-normal leading-relaxed"
                 >
                   {text}
                 </p>
@@ -146,19 +153,19 @@ export default function AboutPage() {
         </section>
 
         {/* Separator */}
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="mx-auto w-full max-w-7xl py-2 px-4 md:px-8">
           <div className="max-w-[1320px] mx-auto">
             <hr className="border-t border-[#FA8128]" />
           </div>
         </section>
 
         {/* Values */}
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-12 pb-0 md:pb-20">
+        <section className="mx-auto w-full max-w-7xl py-2 px-4 md:px-8">
           <div className="max-w-[1320px] mx-auto">
-            <h2 className="text-[#1560BD] text-base md:text-[20px] xl:text-[24px] font-medium mb-4 md:mb-8">
+            <h2 className="text-[#FA8128] text-base md:text-[20px] font-medium mb-4 md:mb-8">
               Values
             </h2>
-            <ul className="w-full space-y-4 sm:space-y-5 list-none">
+            <ul className="w-full space-y-4 sm:space-y-5 list-none ">
               {VALUES_ITEMS.map(({ term, description }) => (
                 <li key={term} className="flex gap-2 sm:gap-3">
                   <span
@@ -166,10 +173,10 @@ export default function AboutPage() {
                     aria-hidden
                   />
                   <div>
-                    <span className="text-[#4C4C4C] text-[14px] md:text-[20px] xl:text-[24px] font-normal">
+                    <span className="text-[#4C4C4C] text-[14px] md:text-base xl:text-[18px] font-normal">
                       {term} -
                     </span>{" "}
-                    <span className="text-[#4C4C4C] text-[14px] md:text-[20px] xl:text-[24px] font-normal leading-relaxed">
+                    <span className="text-[#4C4C4C] text-[14px] md:text-base xl:text-[18px] font-normal leading-relaxed">
                       {description}
                     </span>
                   </div>

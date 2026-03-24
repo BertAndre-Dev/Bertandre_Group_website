@@ -29,7 +29,7 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3 className="text-white font-bold text-[14px] md:text-base mb-4">
+      <h3 className="text-white font-bold text-base md:text-[18px] mb-4">
         {heading}
       </h3>
       <ul className="flex flex-col gap-4">
@@ -37,7 +37,7 @@ function FooterColumn({
           <li key={href}>
             <Link
               href={href}
-              className="text-[#FFFFFF80] text-[14px] md:text-[18px] font-light md:font-normal hover:text-white transition-colors"
+              className="text-[#FFFFFF80] text-[14px] md:text-base font-light md:font-normal hover:text-white transition-colors"
             >
               {label}
             </Link>
@@ -104,7 +104,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#1A1A1A]">
       <div
-        className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-0 pt-12 pb-8 lg:pt-16 lg:pb-10"
+        className="mx-auto w-full max-w-7xl px-4 md:px-0 py-10 "
 
         // className="container mx-auto px-4 pt-12 pb-8 lg:pt-16 lg:pb-10"
       >

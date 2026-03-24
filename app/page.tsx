@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <main className="mx-auto px-6 md:px-8 lg:px-10 xl:px-0">
+      <main className="">
         <HeroSection />
         <HeroBanner />
         <AboutSection />

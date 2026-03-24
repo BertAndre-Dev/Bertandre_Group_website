@@ -27,8 +27,8 @@ export default function PortfolioPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
       <main>
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 lg:pt-14 pb-10 sm:pb-14">
-          <div className="max-w-[1320px] mx-auto flex flex-col items-center">
+        <section className="mx-auto w-full max-w-7xl px-4 md:px-0 pt-20">
+          <div className="mx-auto flex flex-col items-start">
             <Pill className="mb-8 sm:mb-10" active>
               Our Portfolio
             </Pill>

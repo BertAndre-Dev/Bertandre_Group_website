@@ -129,7 +129,7 @@ export default function HeroBanner() {
   }
 
   return (
-    <section className="container mx-auto pb-12 lg:pb-16">
+    <section className="mx-auto w-full max-w-7xl px-4 md:px-0 pb-12 lg:pb-16">
       <div className="relative w-full rounded-2xl lg:rounded-3xl overflow-hidden aspect-[33/10] min-h-[240px] max-h-[420px]">
         <Swiper
           modules={[Autoplay]}

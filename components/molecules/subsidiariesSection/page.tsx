@@ -35,7 +35,7 @@ function SubsidiaryCard({
         <h3 className="text-base md:text-xl font-semibold text-[#FA8128] mb-2">
           {title}
         </h3>
-        <p className="text-[#4C4C4C] text-sm sm:text-base leading-relaxed mb-4">
+        <p className="text-[#4C4C4C] text-sm md:text-base leading-relaxed mb-4">
           {description}
         </p>
         <Link
@@ -89,8 +89,8 @@ const SUBSIDIARIES: SubsidiaryCardProps[] = [
 export default function SubsidiariesSection() {
   return (
     <section className="bg-[#1A1A1A]">
-      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-0">
-        <div className="flex justify-center mb-10 pt-6  lg:mb-12">
+      <div className="mx-auto w-full max-w-7xl px-4 md:px-0 pt-10">
+        <div className="flex justify-center mb-10 pt-6 lg:mb-12">
           <Pill
             className="border border-[#FA8128] px-10 text-[#1A1A1A]"
             active
