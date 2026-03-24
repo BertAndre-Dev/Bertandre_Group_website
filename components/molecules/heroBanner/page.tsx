@@ -88,7 +88,9 @@ export default function HeroBanner() {
                   src={slide.image}
                   alt={slide.label}
                   className="absolute inset-0 h-full w-full object-cover"
-                  loading={index === 0 ? "eager" : "lazy"}
+                  // Eager: lazy images often never load inside Swiper (overflow/transform),
+                  // which shows up as missing slides on deploy / some browsers.
+                  loading="eager"
                   fetchPriority={index === 0 ? "high" : "low"}
                   decoding="async"
                 />

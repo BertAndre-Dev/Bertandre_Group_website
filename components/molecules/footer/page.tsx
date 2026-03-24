@@ -148,7 +148,7 @@ export default function Footer() {
                 href="tel:+2343722742444"
                 className="text-[#FFFFFF80] text-sm hover:text-white transition-colors block mb-3"
               >
-                +234 372 274 2444
+                +234 913 866 7927
               </a>
               <SocialIcons />
             </div>
