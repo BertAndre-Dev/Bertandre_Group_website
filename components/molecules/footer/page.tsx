@@ -59,7 +59,7 @@ function SocialIcons() {
         aria-label="Instagram"
       >
         <Image
-          src="/assets/Instagram.svg"
+          src="/assets/instagram.svg"
           className="w-5 h-5"
           alt="Instagram"
           width={20}
@@ -74,7 +74,7 @@ function SocialIcons() {
         aria-label="YouTube"
       >
         <Image
-          src="/assets/YouTube.svg"
+          src="/assets/youtube.svg"
           className="w-5 h-5"
           alt="YouTube"
           width={20}
@@ -89,7 +89,7 @@ function SocialIcons() {
         aria-label="Facebook"
       >
         <Image
-          src="/assets/Facebook.svg"
+          src="/assets/facebook.svg"
           className="w-5 h-5"
           alt="Facebook"
           width={20}

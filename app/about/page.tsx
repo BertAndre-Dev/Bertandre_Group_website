@@ -63,7 +63,7 @@ export default function AboutPage() {
       <Navbar />
       <main>
         {/* Hero: Banner image */}
-        <section className="mx-auto w-full max-w-7xl px-4 md:px-0 pt-20">
+        <section className="mx-auto w-full max-w-7xl px-4 md:px-8 xl:px-0 pt-20">
           <div className="border border-[#FEE6D4] rounded-3xl  mx-auto">
             <div className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden aspect-[33/10] min-h-[150px]">
               <Image
@@ -79,7 +79,7 @@ export default function AboutPage() {
         </section>
 
         {/* About Us pill + intro text */}
-        <section className="mx-auto w-full max-w-7xl px-4 md:px-0">
+        <section className="mx-auto w-full max-w-7xl px-4 md:px-8 xl:px-0">
           <div className="mx-auto">
             <Pill className="px-8 mb-6 sm:mb-8 mt-12" active>
               {ABOUT_COPY.pill}
