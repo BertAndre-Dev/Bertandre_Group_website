@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "BertAndre Group",
   description: "BertAndre Group is a group of companies that provides a range of services to the public",
+  icons: {
+    icon: "/assets/Logo.svg",
+    apple: "/assets/Logo.svg",
+  },
 };
 
 export default function RootLayout({
