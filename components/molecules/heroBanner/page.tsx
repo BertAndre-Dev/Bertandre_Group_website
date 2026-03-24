@@ -60,7 +60,7 @@ export default function HeroBanner() {
 
   return (
     <section className="mx-auto w-full max-w-7xl px-4 md:px-8 xl:px-0 pb-12 lg:pb-16">
-      <div className="relative w-full rounded-2xl lg:rounded-3xl overflow-hidden aspect-33/10 min-h-[200px] max-h-[420px] bg-[#001F3F]">
+      <div className="relative w-full rounded-2xl lg:rounded-3xl overflow-hidden aspect-33/10 min-h-[200px] max-h-[320px] bg-[#001F3F]">
         <Swiper
           modules={[Autoplay]}
           onSwiper={(swiper) => {
@@ -139,7 +139,7 @@ export default function HeroBanner() {
         </div>
 
         {/* Quote overlay */}
-        <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center p-4 sm:p-6 lg:p-8">
+        <div className="pointer-events-none absolute inset-0 z-10 flex items-end justify-center p-4 sm:p-6 lg:p-8">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeSlide.id}
