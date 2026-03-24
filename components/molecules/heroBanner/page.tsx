@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import React, { useCallback, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -122,15 +121,17 @@ export default function HeroBanner() {
                       : "border border-[#FA8128]/90 bg-black/25 text-white backdrop-blur-sm hover:bg-black/40",
                   ].join(" ")}
                 >
-                  <span className="relative inline-block h-4 w-4 shrink-0 sm:h-5 sm:w-5">
-                    <Image
-                      src={slide.icon}
-                      alt=""
-                      fill
-                      className="object-contain"
-                      sizes="20px"
-                    />
-                  </span>
+                  {/* Native img: Next/Image optimizer often breaks SVGs in production */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={slide.icon}
+                    alt=""
+                    width={20}
+                    height={20}
+                    className="h-4 w-4 shrink-0 object-contain sm:h-5 sm:w-5"
+                    loading="eager"
+                    decoding="async"
+                  />
                   <span className={isActive ? "inline" : "hidden sm:inline"}>
                     {slide.label}
                   </span>

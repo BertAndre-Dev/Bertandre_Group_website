@@ -24,11 +24,11 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
-    <nav className="bg-[#1A1A1A] shadow-md sticky top-0 z-50 py-4">
+    <nav className="bg-white lg:bg-[#1A1A1A] shadow-md sticky top-0 z-50 py-4">
 
       {/* Main Navbar */}
       <div className="mx-auto w-full max-w-7xl px-4 md:px-8 xl:px-0">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image

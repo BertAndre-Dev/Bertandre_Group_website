@@ -139,13 +139,13 @@ export default function Footer() {
                 Social
               </h3>
               <a
-                href="mailto:support@bertandre.com"
+                href="mailto:info@bertandregroup.com"
                 className="text-[#FFFFFF80] text-sm hover:text-white transition-colors block mb-1"
               >
-                support@bertandre.com
+                info@bertandregroup.com
               </a>
               <a
-                href="tel:+2343722742444"
+                href="tel:+2349138667927"
                 className="text-[#FFFFFF80] text-sm hover:text-white transition-colors block mb-3"
               >
                 +234 913 866 7927
