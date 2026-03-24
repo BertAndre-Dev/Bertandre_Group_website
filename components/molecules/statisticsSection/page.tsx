@@ -71,7 +71,7 @@ const STATS = [
 export default function StatisticsSection() {
   return (
     <section className="bg-[#FFF6EF]">
-      <div className="mx-auto w-full max-w-7xl px-4 md:px-0 py-10 md:py-20 my-12 md:my-20">
+      <div className="mx-auto w-full max-w-7xl px-4 md:px-8 xl:px-0 pt-10 md:py-20 my-12 md:my-20">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-12 md:gap-8">
           {STATS.map((stat) => (
             <StatCard

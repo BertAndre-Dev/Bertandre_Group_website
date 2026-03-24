@@ -80,7 +80,7 @@ export default function AboutPage() {
 
         {/* About Us pill + intro text */}
         <section className="mx-auto w-full max-w-7xl px-4 md:px-0">
-          <div className="max-w-[1320px] mx-auto">
+          <div className="mx-auto">
             <Pill className="px-8 mb-6 sm:mb-8 mt-12" active>
               {ABOUT_COPY.pill}
             </Pill>
@@ -154,14 +154,14 @@ export default function AboutPage() {
 
         {/* Separator */}
         <section className="mx-auto w-full max-w-7xl py-2 px-4 md:px-8">
-          <div className="max-w-[1320px] mx-auto">
+          <div className="mx-auto">
             <hr className="border-t border-[#FA8128]" />
           </div>
         </section>
 
         {/* Values */}
         <section className="mx-auto w-full max-w-7xl py-2 px-4 md:px-8">
-          <div className="max-w-[1320px] mx-auto">
+          <div className="mx-auto">
             <h2 className="text-[#FA8128] text-base md:text-[20px] font-medium mb-4 md:mb-8">
               Values
             </h2>

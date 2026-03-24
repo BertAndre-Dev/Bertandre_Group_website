@@ -89,7 +89,7 @@ const SUBSIDIARIES: SubsidiaryCardProps[] = [
 export default function SubsidiariesSection() {
   return (
     <section className="bg-[#1A1A1A]">
-      <div className="mx-auto w-full max-w-7xl px-4 md:px-0 pt-10">
+      <div className="mx-auto w-full max-w-7xl px-4 md:px-8 xl:px-0 pt-10">
         <div className="flex justify-center mb-10 pt-6 lg:mb-12">
           <Pill
             className="border border-[#FA8128] px-10 text-[#1A1A1A]"

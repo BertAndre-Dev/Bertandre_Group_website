@@ -46,7 +46,7 @@ function InfoCard({
 export default function AboutSection() {
   return (
     <section className="bg-white">
-      <div className="mx-auto w-full max-w-7xl px-4 md:px-0 pt-10">
+      <div className="mx-auto w-full max-w-7xl px-4 md:px-8 xl:px-0 pt-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-10 xl:gap-16">
           {/* Left column: About Us */}
           <div>

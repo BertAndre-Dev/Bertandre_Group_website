@@ -16,7 +16,7 @@ export default function ContactPage() {
       <Navbar />
       <main>
         <section className="container mx-auto px-6 md:px-8 lg:px-0 pt-18 sm:pt-12 lg:pt-16 mb-50">
-          <div className="max-w-[1320px] mx-auto">
+          <div className="mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
               <ContactCards />
               <ContactForm />

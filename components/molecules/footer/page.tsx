@@ -104,7 +104,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#1A1A1A]">
       <div
-        className="mx-auto w-full max-w-7xl px-4 md:px-0 py-10 "
+        className="mx-auto w-full max-w-7xl px-4 md:px-8 xl:px-0 pt-10 "
 
         // className="container mx-auto px-4 pt-12 pb-8 lg:pt-16 lg:pb-10"
       >

@@ -27,7 +27,7 @@ export default function Navbar() {
     <nav className="bg-[#1A1A1A] shadow-md sticky top-0 z-50 py-4">
 
       {/* Main Navbar */}
-      <div className="container  mx-auto px-6 md:px-8 lg:px-10 xl:px-0">
+      <div className="mx-auto w-full max-w-7xl px-4 md:px-8 xl:px-0">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
@@ -41,7 +41,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-x-12 xl:gap-x-20">
+          <div className="hidden lg:flex items-center gap-x-12 xl:gap-x-15">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
 
