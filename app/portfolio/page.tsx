@@ -18,7 +18,7 @@ const PORTFOLIO_ITEMS = [
     category: "SMART METER",
     title: "SAAIR",
     description:
-      "Our smart metering solutions enable transparent, efficient, and data-driven energy management for residential estates and smart homes. These solutions support accurate consumption tracking, improved billing visibility, and better energy control for both residents and estate operators, forming a foundational component of intelligent estate infrastructure.",
+      "Our smart metering solutions enable transparent, efficient, and data-driven energy management and intelligence for residential estates and smart homes. These solutions support accurate consumption tracking, improved billing visibility, and better energy control for both residents and estate operators, forming a foundational component of intelligent property infrastructure.",
   },
 ];
 
