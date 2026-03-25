@@ -22,7 +22,7 @@ export default function HeroSection() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-12 items-center">
         {/* Left: Headline */}
         <div>
-          <h1 className="text-[32px] md:text-[44px] lg:text-[50px] font-medium text-[#171717]">
+          <h1 className="text-[32px] md:text-[44px] lg:text-[46px] font-medium text-[#171717]">
             {HERO_COPY.headline[0]}
             <br className="hidden md:block" />
             {HERO_COPY.headline[1]}
@@ -32,7 +32,7 @@ export default function HeroSection() {
         {/* Right: Description + CTAs */}
         <div className="flex flex-col gap-6 lg:gap-4 xl:gap-8">
           <div className="relative">
-            <p className="text-[14px] md:text-[24px] leading-7 md:leading-10 font-normal tracking-tight text-[#4C4C4C]">
+            <p className="text-[14px] md:text-[20px] leading-7 md:leading-10 font-normal tracking-tight text-[#4C4C4C]">
               {HERO_COPY.description}
             </p>
           </div>
