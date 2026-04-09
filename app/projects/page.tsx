@@ -17,6 +17,8 @@ const PROJECT_ITEMS = [
     imageAlt: "Berta Estate Hub - estate and community management",
     category: "PROPERTY MANAGEMENT",
     title: "Berta Hub",
+    linkLabel: "www.bertahub.com",
+    linkHref: "https://www.bertahub.com",
     description:
       "Berta Hub is a digital property and community management platform developed to address operational inefficiencies in properties. The platform centralizes energy intelligence, resident onboarding, utility-related processes, billing visibility, and communication between residents, property managers, and service providers. Initially developed from real challenges encountered within Group real estate projects, Berta Hub is currently in pilot deployment and positioned for scale across multiple estates and developers as a core PropTech asset within the Group.",
   },
