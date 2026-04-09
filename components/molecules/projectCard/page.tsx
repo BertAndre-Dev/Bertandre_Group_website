@@ -46,6 +46,8 @@ export default function ProjectCard({
         <Link
           href={linkHref}
           className="inline-flex items-center gap-1 text-[#FA8128] font-medium text-[14px] md:text-[16px] hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           {linkLabel}
           <span aria-hidden="true"> →</span>
