@@ -35,7 +35,7 @@ const SUBSIDIARIES = [
     title: "SAAIR Energy",
     description:
       "SAAIR Energy delivers integrated energy solutions across metering, monitoring, and energy infrastructure. The venture supports estates, enterprises, and institutions with reliable energy access while positioning for expansion into renewable energy, energy-as-a-service, and infrastructure-backed solutions.",
-    linkLabel: "www.SAAIRenergy.com",
+    linkLabel: "www.saairenergy.com",
     linkHref: "https://www.saairenergy.com",
     imageSrc: "/assets/subsidiaries/saair.svg",
     imageAlt: "SAAIR Energy – energy solutions",
@@ -44,8 +44,8 @@ const SUBSIDIARIES = [
     title: "Autodate Smart Fleet",
     description:
       "Autodate Smart Fleet provides end-to-end fleet administration, compliance management, and mobility solutions for corporate and institutional clients. The platform simplifies vehicle registration, licensing, insurance management, and compliance while evolving toward smart mobility and EV-enabled solutions.",
-    linkLabel: "www.autodatesmartfleet.com",
-    linkHref: "https://www.autodatesmartfleet.com",
+    linkLabel: "www.autodatefleet.com",
+    linkHref: "https://www.autodatefleet.com",
     imageSrc: "/assets/subsidiaries/autodate.svg",
     imageAlt: "Autodate Smart Fleet – fleet management",
   },
