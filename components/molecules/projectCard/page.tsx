@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export interface ProjectCardProps {
   readonly imageSrc: string;
@@ -7,6 +8,8 @@ export interface ProjectCardProps {
   readonly category: string;
   readonly title: string;
   readonly description: string;
+  readonly linkLabel: string;
+  readonly linkHref: string;
 }
 
 export default function ProjectCard({
@@ -15,6 +18,8 @@ export default function ProjectCard({
   category,
   title,
   description,
+  linkLabel,
+  linkHref,
 }: ProjectCardProps) {
   return (
     <article className="w-full mx-auto border border-[#FEE6D4] md:border-none rounded-2xl md:rounded-none overflow-hidden bg-white shadow-sm md:shadow-none">
@@ -38,6 +43,13 @@ export default function ProjectCard({
         <p className="text-[#4C4C4C] text-[14px] md:text-base xl:text-[18px] font-normal leading-relaxed">
           {description}
         </p>
+        <Link
+          href={linkHref}
+          className="inline-flex items-center gap-1 text-[#FA8128] font-medium text-[14px] md:text-[16px] hover:underline"
+        >
+          {linkLabel}
+          <span aria-hidden="true"> →</span>
+        </Link>
       </div>
     </article>
   );

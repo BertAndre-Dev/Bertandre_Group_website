@@ -49,6 +49,8 @@ export default function ProjectsPage() {
                   imageSrc={item.imageSrc}
                   imageAlt={item.imageAlt}
                   category={item.category}
+                  linkLabel={item.linkLabel}
+                  linkHref={item.linkHref}
                   title={item.title}
                   description={item.description}
                 />

@@ -19,6 +19,8 @@ const PORTFOLIO_ITEMS = [
     title: "SAAIR",
     description:
       "Our smart metering solutions enable transparent, efficient, and data-driven energy management and intelligence for residential estates and smart homes. These solutions support accurate consumption tracking, improved billing visibility, and better energy control for both residents and estate operators, forming a foundational component of intelligent property infrastructure.",
+    linkLabel: "www.saairenergy.com",
+    linkHref: "https://www.saairenergy.com",
   },
 ];
 
@@ -39,6 +41,8 @@ export default function PortfolioPage() {
                   imageSrc={item.imageSrc}
                   imageAlt={item.imageAlt}
                   category={item.category}
+                  linkLabel={item.linkLabel}
+                  linkHref={item.linkHref}
                   title={item.title}
                   description={item.description}
                 />
