@@ -16,7 +16,7 @@ interface StatCardProps {
 
 function StatCard({ icon, value, label }: StatCardProps) {
   return (
-    <div className="flex items-center justify-center gap-4">
+    <div className="flex flex-col md:flex-row items-start justify-start md:justify-center md:items-center gap-4">
       <div className="flex items-center justify-center w-[30px] h-[30px] shrink-0">
         {icon}
       </div>
@@ -76,7 +76,7 @@ const STATS = [
 export default function StatisticsSection() {
   return (
     <section className="bg-[#FFF6EF]">
-      <div className="mx-auto w-full max-w-7xl px-4 md:px-8 xl:px-0 pt-10 pb-6 md:pb-0 md:py-20 my-12 md:my-20">
+      <div className="mx-auto w-full max-w-7xl px-8 md:px-8 xl:px-0 pt-10 pb-6 md:py-20 my-12 md:my-20">
         {/* Mobile (sm and down): slider */}
         <div className="md:hidden">
           <Swiper
@@ -92,7 +92,7 @@ export default function StatisticsSection() {
           >
             {STATS.map((stat) => (
               <SwiperSlide key={stat.label} className="h-auto">
-                <div className="mb-9 md:mb-0">
+                <div className="w-[150px] md:w-full mb-9 md:mb-0 ">
                   <StatCard icon={stat.icon} value={stat.value} label={stat.label} />
                 </div>
               </SwiperSlide>
