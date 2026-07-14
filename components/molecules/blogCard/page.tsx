@@ -25,7 +25,7 @@ export default function BlogCard({
     <article className="w-full mx-auto border border-[#FEE6D4] md:border-none rounded-2xl md:rounded-none overflow-hidden bg-white shadow-sm md:shadow-none">
       <Link href={`/blog/${slug}`} className="block group">
         <div className="rounded-3xl sm:border sm:border-[#FEE6D4] mx-auto">
-          <div className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden aspect-[16/9] min-h-[180px] md:min-h-[220px]">
+          <div className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden aspect-[21/9] min-h-[140px] md:min-h-[180px]">
             <Image
               src={imageSrc}
               alt={imageAlt}

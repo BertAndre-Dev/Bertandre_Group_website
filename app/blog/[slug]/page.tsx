@@ -110,7 +110,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </Link>
 
           <div className="border border-[#FEE6D4] rounded-3xl mx-auto">
-            <div className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden aspect-[16/9] min-h-[200px] md:min-h-[320px]">
+            <div className="relative w-full rounded-xl sm:rounded-3xl overflow-hidden aspect-[21/9] min-h-[160px] md:min-h-[240px]">
               <Image
                 src={post.imageSrc}
                 alt={post.imageAlt}
@@ -124,7 +124,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </section>
 
         <section className="mx-auto w-full max-w-7xl px-4 md:px-8 xl:px-0">
-          <div className="mx-auto max-w-3xl">
+          <div className="mx-auto max-w-4xl">
             <Pill className="px-8 mb-4 sm:mb-6 mt-10 md:mt-12" active>
               {post.category}
             </Pill>
