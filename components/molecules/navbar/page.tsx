@@ -18,6 +18,7 @@ export default function Navbar() {
     { href: "/subsidiaries", label: "Subsidiaries" },
     { href: "/portfolio", label: "Portfolio" },
     { href: "/projects", label: "Projects" },
+    { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact Us" },
   ];
 
@@ -43,7 +44,9 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-x-12 xl:gap-x-15">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive =
+                pathname === link.href ||
+                (link.href !== "/" && pathname.startsWith(`${link.href}/`));
 
               if (link.label === "Contact Us") {
                 return (
@@ -128,7 +131,10 @@ export default function Navbar() {
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
                   className={`text-xl font-medium ${
-                    pathname === link.href ? "text-[#FA8128]" : "text-[#111111]"
+                    pathname === link.href ||
+                    (link.href !== "/" && pathname.startsWith(`${link.href}/`))
+                      ? "text-[#FA8128]"
+                      : "text-[#111111]"
                   }`}
                 >
                   {link.label}
